@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './components/nav.js';
 import Home from './pages/home.js';
+import StudentLife from './pages/student-life.js';
 import Tour from './pages/tour.js';
 
 class App extends React.Component {
@@ -9,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentBuilding: 0,
-      page: 'home'
+      page: 'student life'
     }
   }
 
