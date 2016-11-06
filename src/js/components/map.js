@@ -11,7 +11,17 @@ export default class Map extends React.Component {
     this.map = new google.maps.Map(this.refs.map, {
       center: {lat: 41.82865, lng: -71.40526},
       zoom: 18,
-      style: styles
+      styles: styles
+    })
+
+    this.marker = new google.maps.Marker({
+      position: {lat: 41.82865, lng: -71.40526},
+      icon: {
+        url: 'http://i64.tinypic.com/352ptvr.jpg',
+        scaledSize : new google.maps.Size(44, 64)
+      },
+      map: this.map,
+      title: 'Woods-Gerry'
     })
   }
 
