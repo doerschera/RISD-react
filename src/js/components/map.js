@@ -15,7 +15,7 @@ export default class Map extends React.Component {
     })
 
     this.marker = new google.maps.Marker({
-      position: {lat: 41.82865, lng: -71.40526},
+      position: buildings[this.props.building].position,
       icon: {
         url: 'http://i64.tinypic.com/352ptvr.jpg',
         scaledSize : new google.maps.Size(44, 64)
@@ -25,7 +25,22 @@ export default class Map extends React.Component {
     })
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.building + 'props');
+    this.map.panTo(buildings[nextProps.building].position);
+
+    this.marker = new google.maps.Marker({
+      position: buildings[nextProps.building].position,
+      icon: {
+        url: 'http://i64.tinypic.com/352ptvr.jpg',
+        scaledSize : new google.maps.Size(44, 64)
+      },
+      map: this.map
+    })
+  }
+
    render() {
+     console.log(this.props);
      return  (
        <div id='map' ref='map'></div>
      )
