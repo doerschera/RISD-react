@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MapWrapper from './components/map-wrapper.js';
+import Nav from './components/nav.js';
+import Home from './pages/home.js';
+import Tour from './pages/tour.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentBuilding: 0
+      currentBuilding: 0,
+      page: 'home'
     }
   }
 
@@ -17,14 +20,27 @@ class App extends React.Component {
     this.setState({currentBuilding: currentBuilding});
   }
 
+  pageView() {
+    if(this.state.page === 'tour') {
+      return (<Tour
+        building={this.state.currentBuilding}
+        nextStop={this.nextStop.bind(this)}
+    />);
+    } else if (this.state.page === 'academics') {
+      return <Academics />;
+    } else if (this.state.page === 'student life') {
+      return <StudentLife />;
+    } else {
+      return <Home />
+    }
+  }
+
   render() {
     console.log(this.state);
     return (
       <div>
-        <MapWrapper
-          building={this.state.currentBuilding}
-          nextStop={this.nextStop.bind(this)}
-      />
+        <Nav />
+        {this.pageView()}
       </div>
     )
   }

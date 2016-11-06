@@ -20,13 +20,11 @@ export default class Map extends React.Component {
         url: 'http://i64.tinypic.com/352ptvr.jpg',
         scaledSize : new google.maps.Size(44, 64)
       },
-      map: this.map,
-      title: 'Woods-Gerry'
+      map: this.map
     })
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.building + 'props');
     this.map.panTo(buildings[nextProps.building].position);
 
     this.marker = new google.maps.Marker({
