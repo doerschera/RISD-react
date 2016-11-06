@@ -5,9 +5,8 @@ export default class MapWrapper extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class='white-box relative col m6' id='mapWrapper'>
         <Map building={this.props.building}/>
-        <button onClick={this.props.nextStop}>Next</button>
       </div>
     )
   }
