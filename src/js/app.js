@@ -11,9 +11,41 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentBuilding: 0,
-      page: 'tour',
-      tour: 'start'
+      page: 'home',
+      tour: 'start',
+      navLinks: ['Student Life', 'Tour', 'Academics']
     }
+  }
+
+  mainNav(event) {
+    let page = event.target.innerHTML;
+    let links = ['Student Life', 'Tour', 'Academics'];
+    page = page.toLowerCase();
+
+    if(page == 'student life') {
+      links = ['Tour', 'Home', 'Academics'];
+    } else if (page == 'academics') {
+      links = ['Student Life', 'Home', 'Tour'];
+    } else if(page == 'tour') {
+      links = ['Student Life', 'Home', 'Academics']
+    }
+
+    this.setState({page: page, navLinks: links});
+  }
+
+  arrowNav(event) {
+    let page = event.target.getAttribute('data-page');
+    let links = ['Student Life', 'Tour', 'Academics'];
+
+    if(page == 'student life') {
+      links = ['Tour', 'Home', 'Academics'];
+    } else if (page == 'academics') {
+      links = ['Student Life', 'Home', 'Tour'];
+    } else if(page == 'tour') {
+      links = ['Student Life', 'Home', 'Academics']
+    }
+
+    this.setState({page: page, navLinks: links});
   }
 
   startTour() {
@@ -66,7 +98,7 @@ class App extends React.Component {
     } else if (this.state.page === 'student life') {
       return <StudentLife />;
     } else {
-      return <Home />
+      return <Home arrowNav={this.arrowNav.bind(this)}/>
     }
   }
 
@@ -74,7 +106,10 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div>
-        <Nav />
+        <Nav
+          mainNav={this.mainNav.bind(this)}
+          navLinks={this.state.navLinks}
+        />
         {this.pageView()}
       </div>
     )

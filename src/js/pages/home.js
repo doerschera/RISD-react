@@ -9,7 +9,7 @@ export default class Home extends React.Component {
         <div class='valign-wrapper welcome-wrapper'>
           <h1 class="welcome white-box">Welcome to <span><br></br></span> RISD </h1>
         </div>
-        <Arrow />
+        <Arrow arrowNav={this.props.arrowNav}/>
       </div>
     )
   }
