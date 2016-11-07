@@ -11,8 +11,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentBuilding: 0,
-      page: 'tour'
+      page: 'tour',
+      tour: 'start'
     }
+  }
+
+  startTour() {
+    console.log('click');
+    this.setState({tour: ''});
   }
 
   nextStop() {
@@ -22,11 +28,20 @@ class App extends React.Component {
     this.setState({currentBuilding: currentBuilding});
   }
 
+  prevStop() {
+    var currentBuilding = this.state.currentBuilding;
+    currentBuilding--
+    this.setState({currentBuilding: currentBuilding});
+  }
+
   pageView() {
     if(this.state.page === 'tour') {
       return (<Tour
         building={this.state.currentBuilding}
+        startTour={this.startTour.bind(this)}
         nextStop={this.nextStop.bind(this)}
+        prevStop={this.prevStop.bind(this)}
+        tour={this.state.tour}
     />);
     } else if (this.state.page === 'academics') {
       return <Academics />;

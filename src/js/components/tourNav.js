@@ -6,13 +6,13 @@ export default class TourNave extends React.Component {
     return(
       <div class="col m12" id="tourNav">
         <div id="next">
-          <a href="#">next<i class="material-icons">arrow_forward</i></a>
+          <a href="#" onClick={this.props.nextStop}>next<i class="material-icons">arrow_forward</i></a>
         </div>
         <div id="seeAll">
           <a href="#">see all stops</a>
         </div>
         <div id="prev">
-          <a href="#"><i class="material-icons">arrow_backward</i>previous</a>
+          <a href="#" onClick={this.props.prevStop}><i class="material-icons">arrow_backward</i>previous</a>
         </div>
       </div>
     )

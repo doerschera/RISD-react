@@ -16,7 +16,7 @@ module.exports = [
   {
     name: 'Carr Haus',
     departments: 'Carr Haus Cafe, Center for Student Involvement',
-    address: '210 Benefit'
+    address: '210 Benefit',
     description: 'Carr Haus is one of the most recognizeable buildings on the RISD campus. Originally built in 1885, it was renovated by RISD in the 1970s and has since housed the student-run Carr Haus Cafe. Sourcing food from local vendors, Carr Haus serves coffee, bagels, pastries, and sandwhiches and is a frequent stop for freshman on break from the Waterman Building. Carr Haus also has meeting and study areas for students and hosts informal student exhibitions and open-mic nights.',
     images: ['src/style/images/buildings/carrHaus.png', 'http://media.tumblr.com/tumblr_m416zr8da51r4920y.jpg', 'https://static1.squarespace.com/static/54b6cc7fe4b0ebc96d9ac896/57d4519bd2b85782f9b45dfc/580e18d0e4fcb5572c799c99/1477322254934/Providence_Cafe_Pumpkin_Spice_IMG_6079.jpg?format=500w', 'http://67.media.tumblr.com/b94fa838355c5411e6f536b3d2b0a479/tumblr_n1ema8gyZJ1sxt2xjo1_1280.jpg', 'http://66.media.tumblr.com/a7532de6351a1bc23781ccfcfbcebd06/tumblr_mtbpcivytz1r8nqlko2_1280.jpg']
   },
