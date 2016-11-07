@@ -268,31 +268,39 @@ p {
   font-size: 12px;
   font-weight: 300; }
 
-#student-life {
-  background-image: url("../images/pattern-grey.png");
-  background-size: cover;
-  background-repeat: repeat;
-  position: absolute; }
-  #student-life .nav a {
-    color: #3973ac; }
-  #student-life .white-box {
-    padding: 15px; }
-  #student-life h1, #student-life h2, #student-life h3, #student-life h4, #student-life h5 {
-    color: #3973ac;
-    text-align: center; }
-  #student-life p {
-    font-weight: 300;
-    font-size: 14px; }
-  #student-life .container a {
-    color: #3973ac; }
-  #student-life .row {
-    border-bottom: dashed 2px #3973ac;
-    margin-bottom: 0; }
+#student-life .white-box {
+  padding: 15px; }
+#student-life a:hover {
+  color: #3973ac; }
+#student-life h2, #student-life h4 {
+  color: #3973ac; }
+#student-life p {
+  font-weight: 300;
+  font-size: 14px; }
+#student-life .row {
+  border-bottom: dashed 2px #3973ac;
+  margin-bottom: 0; }
+
+.xlarge, .large, .medium, .small, .xsmall {
+  text-align: center; }
+
+.xlarge {
+  font-size: 4.2rem; }
+
+.large {
+  font-size: 3.56rem; }
+
+.medium {
+  font-size: 1.93rem; }
+
+.xsmall {
+  font-size: 1.64rem; }
 
 #slIntro, #slDining, #slDorms {
   border-right: dashed 2px #3973ac; }
-  #slIntro h2, #slDining h2, #slDorms h2 {
-    text-align: left; }
+  #slIntro h4, #slIntro h2, #slDining h4, #slDining h2, #slDorms h4, #slDorms h2 {
+    text-align: left;
+    color: #3973ac; }
 
 #slGalleries, #slAlumni {
   border-right: dashed 2px #3973ac;
@@ -303,16 +311,16 @@ p {
 #slDorms h4, #slCafes h4, #slDining h4 {
   text-align: left;
   margin-top: 0; }
-#slDorms h3, #slCafes h3, #slDining h3 {
-  margin-top: 0; }
+#slDorms h4, #slDorms a:hover, #slCafes h4, #slCafes a:hover, #slDining h4, #slDining a:hover {
+  color: #3973ac; }
 
-#slMuseum h1, #slMuseum h2, #slMuseum h3, #slMuseum h4, #slMuseum a:hover, #slAlumni h1, #slAlumni h2, #slAlumni h3, #slAlumni h4, #slAlumni a:hover, #slDorms h1, #slDorms h2, #slDorms h3, #slDorms h4, #slDorms a:hover {
+#slMuseum h4, #slMuseum a:hover, #slAlumni h4, #slAlumni a:hover, #slDorms h4, #slDorms a:hover {
   color: #6599cc; }
 
-#slNatureLab h1, #slNatureLab h2, #slNatureLab h3, #slNatureLab h4, #slNatureLab a:hover, #slLibrary h1, #slLibrary h2, #slLibrary h3, #slLibrary h4, #slLibrary a:hover, #slClubs h1, #slClubs h2, #slClubs h3, #slClubs h4, #slClubs a:hover {
+#slNatureLab h4, #slNatureLab a:hover, #slLibrary h4, #slLibrary a:hover, #slClubs h4, #slClubs a:hover {
   color: #2c5986; }
 
-#slStudents h1, #slStudents h2, #slStudents h3, #slStudents h4, #slStudents a:hover, #slGalleries h1, #slGalleries h2, #slGalleries h3, #slGalleries h4, #slGalleries a:hover, #slCafes h1, #slCafes h2, #slCafes h3, #slCafes h4, #slCafes a:hover {
+#slstudents h4, #slstudents a:hover, #slGalleries h4, #slGalleries a:hover, #slCafes h4, #slCafes a:hover {
   color: #264d73; }
 
 #tourMap {

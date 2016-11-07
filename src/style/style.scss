@@ -285,26 +285,18 @@ p {
 }
 
 #student-life {
-  background-image: url('../images/pattern-grey.png');
-  background-size: cover;
-  background-repeat: repeat;
-  position: absolute;
-  .nav a {
-    color: $blue;
-  }
   .white-box {
     padding: 15px;
   }
-  h1,h2,h3,h4,h5 {
+  a:hover {
     color: $blue;
-    text-align: center;
+  }
+  h2, h4 {
+    color: $blue;
   }
   p {
     font-weight: 300;
     font-size: 14px;
-  }
-  .container a {
-    color: $blue;
   }
   .row {
     @include dashed-border(bottom, $blue);
@@ -312,9 +304,30 @@ p {
   }
 }
 
+.xlarge, .large, .medium, .small, .xsmall {
+  text-align: center;
+}
+
+.xlarge {
+  font-size: 4.2rem;
+}
+
+.large {
+  font-size: 3.56rem;
+}
+
+.medium {
+  font-size: 1.93rem;
+}
+
+.xsmall {
+  font-size: 1.64rem;
+}
+
 #slIntro, #slDining, #slDorms {
-  h2 {
+  h4, h2 {
     text-align: left;
+    color: $blue;
   }
   @include dashed-border(right, $blue);
 }
@@ -332,25 +345,25 @@ p {
     text-align: left;
     margin-top: 0;
   }
-  h3 {
-    margin-top: 0;
+  h4, a:hover {
+    color: $blue;
   }
 }
 
 #slMuseum, #slAlumni, #slDorms {
-  h1, h2, h3, h4, a:hover {
+  h4, a:hover {
     color: lighten($blue, 15%);
   }
 }
 
 #slNatureLab, #slLibrary, #slClubs {
-  h1, h2, h3, h4, a:hover {
+  h4, a:hover {
     color: darken($blue, 10%);
   }
 }
 
-#slStudents, #slGalleries, #slCafes {
-  h1, h2, h3, h4, a:hover {
+#slstudents, #slGalleries, #slCafes {
+  h4, a:hover {
     color: darken($blue, 15%)
   }
 }

@@ -48,7 +48,7 @@ export default class StudentLife extends React.Component {
 
     return(
       <div>
-        <div class="container">
+        <div class="container" id="student-life">
           <div class="row row-margin">
             <div class="col m7 white-box" id="slIntro">
               <h2>Student Life</h2>
