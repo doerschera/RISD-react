@@ -35,7 +35,7 @@ module.exports = [
     images: [ 'http://www.risd.edu/assets/0/4294967551/4294967528/4294967529/4294967550/b9118e66-e6f0-4daa-b690-68c017d053c0.jpg', 'http://www.risd.edu/uploadedImages/RISD_edu/academics/new_design/painting/landing_page/painting20130500_RISD%20ADM_1884_P1.jpg', 'http://www.risd.edu/uploadedImages/RISD_edu/academics/new_design/painting/landing_page/Painting_15.jpg', 'http://www.risd.edu/uploadedImages/RISD_edu/academics/new_design/painting/landing_page/painting-studio-01.jpg', 'http://www.schoolconstructionnews.com/sites/default/files/web_Feature.RISD_.jpg']
   },
   {
-    name: 'Waterman Building',
+    name: 'Waterman',
     departments: 'Nature Lab, Foundation and Experimental Studies, Foundation Gallery',
     address: '13 Waterman',
     description: 'The Waterman Building houses the Edna Lawrence Nature Lab as well as the department of Foundation and Experimental Studies. The Nature Lab is one of the most unique resources at RISD, offering students the chance to have a hands-on look at natural objects from bones to plants to taxidermy animals. Often featured heavily in foundations projects, the Nature Lab has work tables available for drawing and also allows students to check out certain specimans. The upper floors of the Waterman Building are occupied by drawing and design classrooms for foundation students as well as a computer lab with 3D-printers and laser-cutters. These classrooms are open to students as studio spaces outside of class hours. Gallery space is available to foundations classes on the first floor and hosts a rotating display of projects throughout the year.',

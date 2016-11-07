@@ -13,7 +13,7 @@ export default class BaseInfo extends React.Component {
         </div>
         <div class="row">
           <div class="col m12" id="description">
-            <p>
+            <p id="introP">
               Welcome to RISD! This tour guides you through many of the buildings on campus, as well as all sixteen of our undergraduate majors. At each stop you can find images of buildings, studio spaces, and student work below. We hope this gives you insight into what life like as a RISD student. If you are interested in visitin in person or having questions about applying, please contact us through the Admissions office. Enjoy!
             </p>
           </div>

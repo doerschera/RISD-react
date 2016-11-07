@@ -15,7 +15,7 @@ export default class TourStop extends React.Component {
           </div>
         </div>
         <div class="row">
-          <div class="col m12" class="tourDescription">
+          <div class="tourDescription m12">
             <p>
               {content[this.props.building].description}
             </p>

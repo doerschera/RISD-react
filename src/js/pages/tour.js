@@ -24,6 +24,7 @@ export default class Tour extends React.Component {
               back={this.props.back}
               allStops={this.props.allStops}
               nextStop={this.props.nextStop}
+              prevStop={this.props.prevStop}
             />
           </div>
           <div class='row'>
