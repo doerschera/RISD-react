@@ -11,9 +11,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentBuilding: 0,
-      page: 'tour',
+      page: 'home',
       tour: 'start'
     }
+  }
+
+  mainNav(event) {
+    let page = event.target.innerHTML;
+    page = page.toLowerCase();
+    console.log(page);
+    this.setState({page: page});
   }
 
   startTour() {
@@ -74,7 +81,7 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div>
-        <Nav />
+        <Nav mainNav={this.mainNav.bind(this)}/>
         {this.pageView()}
       </div>
     )
