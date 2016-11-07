@@ -25,6 +25,13 @@ a:hover {
   text-decoration: underline;
 }
 
+i {
+  color: $cyan;
+  width: 24px;
+  vertical-align: text-bottom;
+  font-size: 20px;
+}
+
 .white-link {
   color: white;
   font-weight: 300;
@@ -448,17 +455,21 @@ p {
     line-height: 24px;
     font-size: 14px;
   }
-  i {
-    color: $cyan;
-    width: 24px;
-    vertical-align: text-bottom;
-    font-size: 20px;
-  }
 }
 
 #seeAll {
   padding-top: 3px;
   font-weight: 300;
+}
+
+#allStops {
+  li {
+    display: block;
+    text-align: center;
+  }
+}
+#back {
+  margin-top: 40px;
 }
 
 #next {

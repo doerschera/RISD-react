@@ -17,6 +17,12 @@ a {
 a:hover {
   text-decoration: underline; }
 
+i {
+  color: #4dd2ff;
+  width: 24px;
+  vertical-align: text-bottom;
+  font-size: 20px; }
+
 .white-link {
   color: white;
   font-weight: 300; }
@@ -383,15 +389,17 @@ p {
   #tourNav a {
     line-height: 24px;
     font-size: 14px; }
-  #tourNav i {
-    color: #4dd2ff;
-    width: 24px;
-    vertical-align: text-bottom;
-    font-size: 20px; }
 
 #seeAll {
   padding-top: 3px;
   font-weight: 300; }
+
+#allStops li {
+  display: block;
+  text-align: center; }
+
+#back {
+  margin-top: 40px; }
 
 #next {
   float: right; }

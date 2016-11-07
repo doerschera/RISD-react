@@ -13,10 +13,13 @@ export default class AllStops extends React.Component {
 
     return (
       <div class="white-box relative col m6" id="tourInfo">
-        <ul>
+        <ul id="allStops">
           {allStops}
+          <li id="back">
+            <i class="material-icons">arrow_backward</i>
+            <a onClick={this.props.back}>back</a>
+          </li>
         </ul>
-        <a onClick={this.props.back}>back</a>
         <TourNav
           nextStop={this.props.nextStop}
           prevStop={this.props.prevStop}
