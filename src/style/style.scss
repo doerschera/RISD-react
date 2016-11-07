@@ -54,6 +54,19 @@ p {
   display: none;
 }
 
+.image-box {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .relative {
   position: relative;
 }

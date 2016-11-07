@@ -39,6 +39,19 @@ p {
 .disable {
   display: none; }
 
+.image-box {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px; }
+  .image-box:nth-child(odd) {
+    margin-right: 20px; }
+  .image-box img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
 .relative {
   position: relative; }
 
