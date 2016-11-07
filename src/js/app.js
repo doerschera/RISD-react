@@ -13,39 +13,48 @@ class App extends React.Component {
       currentBuilding: 0,
       page: 'home',
       tour: 'start',
-      navLinks: ['Student Life', 'Tour', 'Academics']
+      navLinks: ['Student Life', 'Tour', 'Academics'],
+      navID: 'nav-home'
     }
   }
 
   mainNav(event) {
     let page = event.target.innerHTML;
     let links = ['Student Life', 'Tour', 'Academics'];
+    let navID = 'nav-home';
     page = page.toLowerCase();
 
     if(page == 'student life') {
       links = ['Tour', 'Home', 'Academics'];
+      navID = 'nav-student-life';
     } else if (page == 'academics') {
       links = ['Student Life', 'Home', 'Tour'];
+      navID = 'nav-academics';
     } else if(page == 'tour') {
       links = ['Student Life', 'Home', 'Academics']
+      navID = 'nav-tour';
     }
 
-    this.setState({page: page, navLinks: links});
+    this.setState({page: page, navLinks: links, navID: navID});
   }
 
   arrowNav(event) {
     let page = event.target.getAttribute('data-page');
     let links = ['Student Life', 'Tour', 'Academics'];
+    let navID = 'nav-home';
 
     if(page == 'student life') {
       links = ['Tour', 'Home', 'Academics'];
+      navID = 'nav-student-life';
     } else if (page == 'academics') {
       links = ['Student Life', 'Home', 'Tour'];
+      navID = 'nav-academics';
     } else if(page == 'tour') {
       links = ['Student Life', 'Home', 'Academics']
+      navID = 'nav-tour';
     }
 
-    this.setState({page: page, navLinks: links});
+    this.setState({page: page, navLinks: links, navID: navID});
   }
 
   startTour() {
@@ -105,10 +114,11 @@ class App extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div>
+      <div id='pageWrapper'>
         <Nav
           mainNav={this.mainNav.bind(this)}
           navLinks={this.state.navLinks}
+          navID={this.state.navID}
         />
         {this.pageView()}
       </div>

@@ -9,6 +9,8 @@ body, html {
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-weight: 400;
+  background-image: url('images/pattern-grey.png');
+  background-size: cover
 }
 
 li {
@@ -98,7 +100,7 @@ p {
   height: 100vh;
   top: 0;
   left: 0;
-  background-image: url('images/buildings-t.png'), url('images/pattern50.png');
+  background-image: url('images/buildings-t.png');
   background-size: cover;
   h1 {
     width: 50%;
@@ -124,6 +126,18 @@ p {
     color: $cyan;
     font-size: 1.25rem;
     margin: 0 40px;
+  }
+}
+
+#nav-academics {
+  li a {
+    color: $teal;
+  }
+}
+
+#nav-student-life {
+  li a {
+    color: $blue;
   }
 }
 
@@ -256,7 +270,7 @@ p {
   .row {
     margin-bottom: 10px;
   }
-  #row1 {
+  #mjrRow1 {
     margin-top: 20px;
   }
   a:hover {

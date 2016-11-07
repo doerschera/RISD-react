@@ -4,7 +4,9 @@ body, html {
 
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  background-image: url("images/pattern-grey.png");
+  background-size: cover; }
 
 li {
   display: inline; }
@@ -75,7 +77,7 @@ p {
   height: 100vh;
   top: 0;
   left: 0;
-  background-image: url("images/buildings-t.png"), url("images/pattern50.png");
+  background-image: url("images/buildings-t.png");
   background-size: cover; }
   .welcome-wrapper h1 {
     width: 50%;
@@ -99,6 +101,12 @@ p {
     color: #4dd2ff;
     font-size: 1.25rem;
     margin: 0 40px; }
+
+#nav-academics li a {
+  color: #4396b5; }
+
+#nav-student-life li a {
+  color: #3973ac; }
 
 #background {
   position: absolute;
@@ -250,7 +258,7 @@ p {
 
 #majorsList .row {
   margin-bottom: 10px; }
-#majorsList #row1 {
+#majorsList #mjrRow1 {
   margin-top: 20px; }
 #majorsList a:hover {
   color: white; }
