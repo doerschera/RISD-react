@@ -33,6 +33,21 @@ class App extends React.Component {
     this.setState({page: page, navLinks: links});
   }
 
+  arrowNav(event) {
+    let page = event.target.getAttribute('data-page');
+    let links = ['Student Life', 'Tour', 'Academics'];
+
+    if(page == 'student life') {
+      links = ['Tour', 'Home', 'Academics'];
+    } else if (page == 'academics') {
+      links = ['Student Life', 'Home', 'Tour'];
+    } else if(page == 'tour') {
+      links = ['Student Life', 'Home', 'Academics']
+    }
+
+    this.setState({page: page, navLinks: links});
+  }
+
   startTour() {
     console.log('click');
     this.setState({tour: ''});
@@ -83,7 +98,7 @@ class App extends React.Component {
     } else if (this.state.page === 'student life') {
       return <StudentLife />;
     } else {
-      return <Home />
+      return <Home arrowNav={this.arrowNav.bind(this)}/>
     }
   }
 

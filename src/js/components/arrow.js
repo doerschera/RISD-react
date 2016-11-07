@@ -7,24 +7,32 @@ export default class Arrow extends React.Component {
       {
         src: 'src/style/images/arrow-right.png',
         id: 'arrowRight',
-        href: '#academics'
+        href: '#academics',
+        data: 'academics'
       },
       {
         src: 'src/style/images/arrow-left.png',
         id: 'arrowLeft',
-        href: '#studentLife'
+        href: '#studentLife',
+        data: 'student life'
       },
       {
         src: 'src/style/images/down-arrow.png',
         id: 'arrowDown',
-        href: '#tour'
+        href: '#tour',
+        data: 'tour'
       }
     ]
 
     const showArrows = arrows.map((arrow, key) =>
       <div class="arrow valign-wrapper" key={key} id={arrow.id}>
         <a href={arrow.href}>
-          <img src={arrow.src} alt={arrow.href} />
+          <img
+            src={arrow.src}
+            alt={arrow.href}
+            data-page={arrow.data}
+            onClick={this.props.arrowNav}
+          />
         </a>
       </div>
     )
