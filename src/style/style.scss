@@ -98,13 +98,8 @@ p {
   height: 100vh;
   top: 0;
   left: 0;
-  img {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.7;
-  }
+  background-image: url('images/buildings-t.png'), url('images/pattern50.png');
+  background-size: cover;
   h1 {
     width: 50%;
     position: absolute;
@@ -144,13 +139,11 @@ p {
   z-index: 3;
 }
 
-#arrow-down {
+#arrowDown {
   position: absolute;
   bottom: 0;
   margin-bottom: 25px;
-  width: 50vw;
-  left: 25vw;
-  text-align: center;
+  left: 50vw;
   @include transition(bottom, 1s);
   a, img {
     display: inline;
@@ -163,12 +156,12 @@ p {
   }
 }
 
-#arrow-right, #arrow-left {
+#arrowRight, #arrowLeft {
   height: 50vh;
   top: 25vh;
 }
 
-#arrow-right {
+#arrowRight {
   @include transition(right, 1s);
   right: 0;
   margin-right: 25px;
@@ -177,7 +170,7 @@ p {
   }
 }
 
-#arrow-left {
+#arrowLeft {
   @include transition(left, 1s);
   left: 0;
   margin-left: 25px;

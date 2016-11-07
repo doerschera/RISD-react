@@ -74,13 +74,9 @@ p {
   width: 100vw;
   height: 100vh;
   top: 0;
-  left: 0; }
-  .welcome-wrapper img {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.7; }
+  left: 0;
+  background-image: url("images/buildings-t.png"), url("images/pattern50.png");
+  background-size: cover; }
   .welcome-wrapper h1 {
     width: 50%;
     position: absolute;
@@ -114,43 +110,41 @@ p {
 .arrow {
   z-index: 3; }
 
-#arrow-down {
+#arrowDown {
   position: absolute;
   bottom: 0;
   margin-bottom: 25px;
-  width: 50vw;
-  left: 25vw;
-  text-align: center;
+  left: 50vw;
   -webkit-transition: bottom 1s;
   -moz-trasition: bottom 1s;
   transition: bottom 1s; }
-  #arrow-down a, #arrow-down img {
+  #arrowDown a, #arrowDown img {
     display: inline; }
-  #arrow-down img {
+  #arrowDown img {
     height: 20vh; }
-  #arrow-down:hover {
+  #arrowDown:hover {
     bottom: 10px; }
 
-#arrow-right, #arrow-left {
+#arrowRight, #arrowLeft {
   height: 50vh;
   top: 25vh; }
 
-#arrow-right {
+#arrowRight {
   -webkit-transition: right 1s;
   -moz-trasition: right 1s;
   transition: right 1s;
   right: 0;
   margin-right: 25px; }
-  #arrow-right:hover {
+  #arrowRight:hover {
     right: 10px; }
 
-#arrow-left {
+#arrowLeft {
   -webkit-transition: left 1s;
   -moz-trasition: left 1s;
   transition: left 1s;
   left: 0;
   margin-left: 25px; }
-  #arrow-left:hover {
+  #arrowLeft:hover {
     left: 10px; }
 
 #academics {
