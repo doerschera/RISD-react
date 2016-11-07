@@ -1,32 +1,22 @@
 import React from 'react';
-import content from '../../data/building-info.js';
+import TourStop from './tourStop.js';
 import BaseInfo from './baseInfo.js';
+import AllStops from './allStops.js';
 
 export default class TourInfo extends React.Component {
 
   tourRender() {
-    if(this.props.tour == 'start') {
+    if(this.props.tour == 'start' && this.props.tour != 'all stops') {
       return (
         <BaseInfo startTour={this.props.startTour}/>
       )
+    } else if (this.props.tour != 'all stops') {
+      return (
+        <TourStop building={this.props.building} />
+      )
     } else {
       return (
-        <div class="white-box relative col m6" id='tourInfo'>
-          <div class="row" id="heading">
-            <div class="col m12">
-              <h3>{content[this.props.building].name}</h3>
-              <p>{content[this.props.building].departments}</p>
-              <p>{content[this.props.building].address}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col m12" class="tourDescription">
-              <p>
-                {content[this.props.building].description}
-              </p>
-            </div>
-          </div>
-        </div>
+        <AllStops tourStop={this.props.tourStop}/>
       )
     }
   }

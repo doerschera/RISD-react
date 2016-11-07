@@ -20,6 +20,7 @@ export default class Tour extends React.Component {
             startTour={this.props.startTour}
             tour={this.props.tour}
             building={this.props.building}
+            tourStop={this.props.tourStop}
           />
         </div>
         <TourNav
@@ -27,6 +28,7 @@ export default class Tour extends React.Component {
           prevStop={this.props.prevStop}
           tour={this.props.tour}
           building={this.props.building}
+          allStops={this.props.allStops}
         />
         <div class='row'>
           <TopButton />

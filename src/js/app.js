@@ -22,16 +22,27 @@ class App extends React.Component {
   }
 
   nextStop() {
-    var currentBuilding = this.state.currentBuilding;
+    let currentBuilding = this.state.currentBuilding;
     currentBuilding++
     console.log(currentBuilding);
     this.setState({currentBuilding: currentBuilding});
   }
 
   prevStop() {
-    var currentBuilding = this.state.currentBuilding;
+    let currentBuilding = this.state.currentBuilding;
     currentBuilding--
     this.setState({currentBuilding: currentBuilding});
+  }
+
+  allStops() {
+    console.log('click');
+    this.setState({tour: 'all stops'})
+  }
+
+  tourStop(event) {
+    let building = event.target.getAttribute('data-building');
+    console.log(building);
+    this.setState({currentBuilding: building, tour: ''});
   }
 
   pageView() {
@@ -42,6 +53,8 @@ class App extends React.Component {
         nextStop={this.nextStop.bind(this)}
         prevStop={this.prevStop.bind(this)}
         tour={this.state.tour}
+        allStops={this.allStops.bind(this)}
+        tourStop={this.tourStop.bind(this)}
     />);
     } else if (this.state.page === 'academics') {
       return <Academics />;
