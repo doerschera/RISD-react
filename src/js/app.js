@@ -14,7 +14,8 @@ class App extends React.Component {
       page: 'home',
       tour: 'start',
       navLinks: ['Student Life', 'Tour', 'Academics'],
-      navID: 'nav-home'
+      navID: 'nav-home',
+      footerID: 'footer-tour'
     }
   }
 
@@ -22,39 +23,61 @@ class App extends React.Component {
     let page = event.target.innerHTML;
     let links = ['Student Life', 'Tour', 'Academics'];
     let navID = 'nav-home';
+    let footerID = 'footer-tour';
     page = page.toLowerCase();
 
     if(page == 'student life') {
       links = ['Tour', 'Home', 'Academics'];
       navID = 'nav-student-life';
+      footerID = 'footer-student-life';
     } else if (page == 'academics') {
       links = ['Student Life', 'Home', 'Tour'];
       navID = 'nav-academics';
+      footerID = 'footer-academics';
     } else if(page == 'tour') {
       links = ['Student Life', 'Home', 'Academics']
       navID = 'nav-tour';
+      footerID = 'footer-tour';
     }
 
-    this.setState({page: page, navLinks: links, navID: navID});
+    this.setState(
+      {
+        page: page,
+        navLinks: links,
+        navID: navID,
+        footerID: footerID
+      }
+    );
   }
 
   arrowNav(event) {
     let page = event.target.getAttribute('data-page');
     let links = ['Student Life', 'Tour', 'Academics'];
     let navID = 'nav-home';
+    let footerID = 'footer-tour';
 
     if(page == 'student life') {
       links = ['Tour', 'Home', 'Academics'];
       navID = 'nav-student-life';
+      footerID = 'footer-student-life';
     } else if (page == 'academics') {
       links = ['Student Life', 'Home', 'Tour'];
       navID = 'nav-academics';
+      footerID = 'footer-academics';
     } else if(page == 'tour') {
       links = ['Student Life', 'Home', 'Academics']
       navID = 'nav-tour';
+      footerID = 'footer-tour';
     }
 
-    this.setState({page: page, navLinks: links, navID: navID});
+    this.setState(
+      {
+        page: page,
+        navLinks: links,
+        navID: navID,
+        footerID: footerID
+      }
+    );
   }
 
   startTour() {
@@ -101,11 +124,12 @@ class App extends React.Component {
         allStops={this.allStops.bind(this)}
         tourStop={this.tourStop.bind(this)}
         back={this.back.bind(this)}
+        footerID={this.state.footerID}
     />);
     } else if (this.state.page === 'academics') {
-      return <Academics />;
+      return <Academics footerID={this.state.footerID}/>;
     } else if (this.state.page === 'student life') {
-      return <StudentLife />;
+      return <StudentLife footerID={this.state.footerID}/>;
     } else {
       return <Home arrowNav={this.arrowNav.bind(this)}/>
     }

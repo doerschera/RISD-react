@@ -10,35 +10,37 @@ export default class Tour extends React.Component {
 
   render() {
     return (
-      <div class='container'>
-        <div class='row'>
-          <MapWrapper
-            building={this.props.building}
+      <div>
+        <div class='container'>
+          <div class='row'>
+            <MapWrapper
+              building={this.props.building}
+              nextStop={this.props.nextStop}
+            />
+            <TourInfo
+              startTour={this.props.startTour}
+              tour={this.props.tour}
+              building={this.props.building}
+              tourStop={this.props.tourStop}
+              back={this.props.back}
+            />
+          </div>
+          <TourNav
             nextStop={this.props.nextStop}
-          />
-          <TourInfo
-            startTour={this.props.startTour}
+            prevStop={this.props.prevStop}
             tour={this.props.tour}
             building={this.props.building}
-            tourStop={this.props.tourStop}
-            back={this.props.back}
+            allStops={this.props.allStops}
           />
+          <div class='row'>
+            <TopButton />
+            <TourImages
+              tour={this.props.tour}
+              building={this.props.building}
+            />
+          </div>
         </div>
-        <TourNav
-          nextStop={this.props.nextStop}
-          prevStop={this.props.prevStop}
-          tour={this.props.tour}
-          building={this.props.building}
-          allStops={this.props.allStops}
-        />
-        <div class='row'>
-          <TopButton />
-          <TourImages
-            tour={this.props.tour}
-            building={this.props.building}
-          />
-        </div>
-        <Footer />
+        <Footer footerID={this.props.footerID}/>
       </div>
     )
   }

@@ -451,7 +451,7 @@ p {
 
 .footer {
   height: 50px;
-  width: 100%;
+  width: 100vw;
   margin-top: 100px;
   background-color: lighten($blue, 15%);
   text-align: center;
@@ -468,4 +468,12 @@ p {
       padding-right: 20px;
     }
   }
+}
+
+#footer-academics {
+  background-color: darken($teal, 15%);
+}
+
+#footer-student-life {
+  background-color: darken($blue, 15%);
 }

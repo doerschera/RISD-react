@@ -7,10 +7,12 @@ export default class Academics extends React.Component {
 
   render() {
     return(
-      <div class="container">
-        <Row1 />
-        <Row2 />
-        <Footer />
+      <div>
+        <div class="container">
+          <Row1 />
+          <Row2 />
+        </div>
+        <Footer footerID={this.props.footerID}/>
       </div>
     )
   }

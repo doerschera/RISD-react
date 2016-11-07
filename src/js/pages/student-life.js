@@ -48,28 +48,30 @@ export default class StudentLife extends React.Component {
 
     return(
       <div>
-        <div class="row row-margin">
-          <div class="col m7 white-box" id="slIntro">
-            <h2>Student Life</h2>
-            <p>
-              RISD offers an abundance of resources to enrich the academic and social experience of students. These are just some of the offerings that make RISD a unique place to live and learn.
-            </p>
+        <div class="container">
+          <div class="row row-margin">
+            <div class="col m7 white-box" id="slIntro">
+              <h2>Student Life</h2>
+              <p>
+                RISD offers an abundance of resources to enrich the academic and social experience of students. These are just some of the offerings that make RISD a unique place to live and learn.
+              </p>
+            </div>
+            {row1}
           </div>
-          {row1}
+          <div class="row">
+            {row2}
+          </div>
+          <div class="row">
+            {row3}
+          </div>
+          <div class="row">
+            {row4}
+          </div>
+          <div class="row">
+            {row5}
+          </div>
         </div>
-        <div class="row">
-          {row2}
-        </div>
-        <div class="row">
-          {row3}
-        </div>
-        <div class="row">
-          {row4}
-        </div>
-        <div class="row">
-          {row5}
-        </div>
-        <Footer />
+        <Footer footerID={this.props.footerID}/>
       </div>
     )
   }

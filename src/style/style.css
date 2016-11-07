@@ -390,7 +390,7 @@ p {
 
 .footer {
   height: 50px;
-  width: 100%;
+  width: 100vw;
   margin-top: 100px;
   background-color: #6599cc;
   text-align: center;
@@ -404,5 +404,11 @@ p {
     .footer ul li:nth-child(1), .footer ul li:nth-child(2) {
       border-right: solid 1px white;
       padding-right: 20px; }
+
+#footer-academics {
+  background-color: #2e687d; }
+
+#footer-student-life {
+  background-color: #264d73; }
 
 /*# sourceMappingURL=style.css.map */
