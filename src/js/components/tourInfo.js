@@ -1,18 +1,34 @@
 import React from 'react';
+import TourStop from './tourStop.js';
+import BaseInfo from './baseInfo.js';
+import AllStops from './allStops.js';
 
 export default class TourInfo extends React.Component {
 
+  tourRender() {
+    if(this.props.tour == 'start' && this.props.tour != 'all stops') {
+      return (
+        <BaseInfo startTour={this.props.startTour}/>
+      )
+    } else if (this.props.tour != 'all stops') {
+      return (
+        <TourStop building={this.props.building} />
+      )
+    } else {
+      return (
+        <AllStops
+          tourStop={this.props.tourStop}
+          back={this.props.back}
+        />
+      )
+    }
+  }
+
   render() {
+    console.log(this.props);
     return(
-      <div class="row">
-        <div class="col m12" id="description">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-        <div class="col m12 center">
-          <button class="waves-effect waves-light btn" type="button" id="startTour">Start Tour</button>
-        </div>
+      <div>
+        {this.tourRender()}
       </div>
     )
   }

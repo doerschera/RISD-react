@@ -11,22 +11,55 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentBuilding: 0,
-      page: 'tour'
+      page: 'tour',
+      tour: 'start'
     }
   }
 
+  startTour() {
+    console.log('click');
+    this.setState({tour: ''});
+  }
+
   nextStop() {
-    var currentBuilding = this.state.currentBuilding;
+    let currentBuilding = this.state.currentBuilding;
     currentBuilding++
     console.log(currentBuilding);
     this.setState({currentBuilding: currentBuilding});
+  }
+
+  prevStop() {
+    let currentBuilding = this.state.currentBuilding;
+    currentBuilding--
+    this.setState({currentBuilding: currentBuilding});
+  }
+
+  allStops() {
+    console.log('click');
+    this.setState({tour: 'all stops'})
+  }
+
+  back() {
+    this.setState({tour: ''});
+  }
+
+  tourStop(event) {
+    let building = event.target.getAttribute('data-building');
+    console.log(building);
+    this.setState({currentBuilding: building, tour: ''});
   }
 
   pageView() {
     if(this.state.page === 'tour') {
       return (<Tour
         building={this.state.currentBuilding}
+        startTour={this.startTour.bind(this)}
         nextStop={this.nextStop.bind(this)}
+        prevStop={this.prevStop.bind(this)}
+        tour={this.state.tour}
+        allStops={this.allStops.bind(this)}
+        tourStop={this.tourStop.bind(this)}
+        back={this.back.bind(this)}
     />);
     } else if (this.state.page === 'academics') {
       return <Academics />;
