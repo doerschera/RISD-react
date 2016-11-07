@@ -1,4 +1,406 @@
-#map {
-  height: 400px;
-  width: 400px;
-}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+body, html {
+  height: 100%; }
+
+body {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 400; }
+
+li {
+  display: inline; }
+
+a {
+  color: #4dd2ff; }
+
+a:hover {
+  text-decoration: underline; }
+
+.white-link {
+  color: white;
+  font-weight: 300; }
+  .white-link:hover {
+    color: white; }
+
+img {
+  height: 100%;
+  width: auto; }
+
+p {
+  font-weight: 300;
+  font-size: 14px; }
+
+.btn {
+  background-color: #4dd2ff; }
+  .btn:hover {
+    background-color: #4dd2ff; }
+
+.disable {
+  display: none; }
+
+.relative {
+  position: relative; }
+
+.center {
+  text-align: center; }
+
+.white-box {
+  background-color: rgba(255, 255, 255, 0.6); }
+
+.circleImg {
+  border: solid 1px #4dd2ff;
+  border-radius: 100%;
+  height: 85px;
+  width: 85px;
+  overflow: hidden;
+  margin-top: 2.1rem;
+  margin-left: 20px; }
+
+.arrow {
+  position: absolute; }
+  .arrow h4 {
+    color: #4dd2ff; }
+
+.risd-home {
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  z-index: 3; }
+  .risd-home img {
+    width: 150px;
+    opacity: 0.75; }
+
+.welcome-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0; }
+  .welcome-wrapper img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7; }
+  .welcome-wrapper h1 {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    color: #4dd2ff;
+    text-align: center;
+    line-height: 125%;
+    font-size: 6rem;
+    z-index: 2;
+    margin-top: 0;
+    padding-bottom: 50px; }
+
+.nav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  z-index: 2; }
+  .nav li a {
+    color: #4dd2ff;
+    font-size: 1.25rem;
+    margin: 0 40px; }
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.5; }
+
+.arrow {
+  z-index: 3; }
+
+#arrow-down {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 25px;
+  width: 50vw;
+  left: 25vw;
+  text-align: center;
+  -webkit-transition: bottom 1s;
+  -moz-trasition: bottom 1s;
+  transition: bottom 1s; }
+  #arrow-down a, #arrow-down img {
+    display: inline; }
+  #arrow-down img {
+    height: 20vh; }
+  #arrow-down:hover {
+    bottom: 10px; }
+
+#arrow-right, #arrow-left {
+  height: 50vh;
+  top: 25vh; }
+
+#arrow-right {
+  -webkit-transition: right 1s;
+  -moz-trasition: right 1s;
+  transition: right 1s;
+  right: 0;
+  margin-right: 25px; }
+  #arrow-right:hover {
+    right: 10px; }
+
+#arrow-left {
+  -webkit-transition: left 1s;
+  -moz-trasition: left 1s;
+  transition: left 1s;
+  left: 0;
+  margin-left: 25px; }
+  #arrow-left:hover {
+    left: 10px; }
+
+#academics {
+  background-image: url("../images/pattern-grey.png");
+  background-repeat: repeat;
+  background-size: cover;
+  width: 100%;
+  position: absolute; }
+
+#academicsNav {
+  width: 100%;
+  text-align: center; }
+  #academicsNav li a {
+    color: #4396b5; }
+
+.row-margin {
+  margin-top: 100px;
+  margin-bottom: 0; }
+
+#foundations, #liberalArts, .majors {
+  padding: 15px; }
+  #foundations h1, #liberalArts h1, .majors h1 {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: #4396b5; }
+  #foundations a, #liberalArts a, .majors a {
+    color: #4396b5; }
+
+#foundations {
+  border-bottom: dashed 2px #4396b5;
+  border-right: dashed 2px #4396b5; }
+
+#liberalArts {
+  border-bottom: dashed 2px #4396b5; }
+
+.majors {
+  padding-top: 15px; }
+
+#majorDescription {
+  border-right: dashed 2px #4396b5; }
+  #majorDescription h1 {
+    padding-top: 20px; }
+
+.majorCircle {
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  color: white;
+  text-align: center;
+  background-color: #4396b5;
+  line-height: 50px;
+  font-weight: 300; }
+
+#mj1 {
+  background-color: #c8e1ea; }
+
+#mj2 {
+  background-color: #b5d7e3; }
+
+#mj3 {
+  background-color: #a3cddc; }
+
+#mj4 {
+  background-color: #90c3d5; }
+
+#mj5 {
+  background-color: #7eb9ce; }
+
+#mj6 {
+  background-color: #6bafc7; }
+
+#mj7 {
+  background-color: #59a5c0; }
+
+#mj8 {
+  background-color: #469bb9; }
+
+#mj9 {
+  background-color: #3f8ca7; }
+
+#mj10 {
+  background-color: #387c94; }
+
+#mj11 {
+  background-color: #316d82; }
+
+#mj12 {
+  background-color: #2a5d6f; }
+
+#mj13 {
+  background-color: #234e5d; }
+
+#mj14 {
+  background-color: #1c3e4a; }
+
+#mj15 {
+  background-color: #152f38; }
+
+#mj16 {
+  background-color: #0e1f25; }
+
+#majorsList .row {
+  margin-bottom: 10px; }
+#majorsList #row1 {
+  margin-top: 20px; }
+#majorsList a:hover {
+  color: white; }
+#majorsList p {
+  color: #4396b5;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300; }
+
+#student-life {
+  background-image: url("../images/pattern-grey.png");
+  background-size: cover;
+  background-repeat: repeat;
+  position: absolute; }
+  #student-life .nav a {
+    color: #3973ac; }
+  #student-life .white-box {
+    padding: 15px; }
+  #student-life h1, #student-life h2, #student-life h3, #student-life h4, #student-life h5 {
+    color: #3973ac;
+    text-align: center; }
+  #student-life p {
+    font-weight: 300;
+    font-size: 14px; }
+  #student-life .container a {
+    color: #3973ac; }
+  #student-life .row {
+    border-bottom: dashed 2px #3973ac;
+    margin-bottom: 0; }
+
+#slIntro, #slDining, #slDorms {
+  border-right: dashed 2px #3973ac; }
+  #slIntro h2, #slDining h2, #slDorms h2 {
+    text-align: left; }
+
+#slGalleries, #slAlumni {
+  border-right: dashed 2px #3973ac;
+  border-left: dashed 2px #3973ac; }
+
+#slDorms p, #slCafes p, #slDining p {
+  margin-bottom: 3px; }
+#slDorms h4, #slCafes h4, #slDining h4 {
+  text-align: left;
+  margin-top: 0; }
+#slDorms h3, #slCafes h3, #slDining h3 {
+  margin-top: 0; }
+
+#slMuseum h1, #slMuseum h2, #slMuseum h3, #slMuseum h4, #slMuseum a:hover, #slAlumni h1, #slAlumni h2, #slAlumni h3, #slAlumni h4, #slAlumni a:hover, #slDorms h1, #slDorms h2, #slDorms h3, #slDorms h4, #slDorms a:hover {
+  color: #6599cc; }
+
+#slNatureLab h1, #slNatureLab h2, #slNatureLab h3, #slNatureLab h4, #slNatureLab a:hover, #slLibrary h1, #slLibrary h2, #slLibrary h3, #slLibrary h4, #slLibrary a:hover, #slClubs h1, #slClubs h2, #slClubs h3, #slClubs h4, #slClubs a:hover {
+  color: #2c5986; }
+
+#slStudents h1, #slStudents h2, #slStudents h3, #slStudents h4, #slStudents a:hover, #slGalleries h1, #slGalleries h2, #slGalleries h3, #slGalleries h4, #slGalleries a:hover, #slCafes h1, #slCafes h2, #slCafes h3, #slCafes h4, #slCafes a:hover {
+  color: #264d73; }
+
+#tourMap {
+  background-image: url("../images/pattern50.png");
+  background-size: cover;
+  background-repeat: repeat; }
+
+#mapWrapper {
+  margin-top: 100px;
+  padding: 20px; }
+  #mapWrapper #map {
+    height: 500px; }
+
+#tourInfo {
+  box-sizing: content-box;
+  margin-top: 100px;
+  height: 500px;
+  padding: 20px 0; }
+  #tourInfo h1 {
+    color: #4dd2ff;
+    text-align: center; }
+  #tourInfo p {
+    padding: 0 10px; }
+
+#startTour {
+  margin-top: 20px; }
+
+#stopNav {
+  position: absolute;
+  bottom: 20px;
+  text-align: center; }
+  #stopNav div {
+    display: inline; }
+  #stopNav a {
+    line-height: 24px;
+    font-size: 14px; }
+  #stopNav i {
+    color: #4dd2ff;
+    width: 24px;
+    vertical-align: text-bottom;
+    font-size: 20px; }
+
+#seeAll {
+  padding-top: 3px;
+  font-weight: 300; }
+
+#next {
+  float: right; }
+
+#prev {
+  float: left; }
+
+#images {
+  margin-top: 50px; }
+  #images #top {
+    padding-top: 5px;
+    position: absolute;
+    bottom: 0;
+    right: -100px;
+    height: 55px;
+    width: 55px;
+    border-radius: 100%;
+    border: solid 1px #4dd2ff;
+    text-align: center;
+    font-size: 12px;
+    color: #4dd2ff; }
+    #images #top a:hover, #images #top i:hover {
+      text-decoration: none;
+      cursor: pointer; }
+    #images #top h6 {
+      margin-top: -10px; }
+    #images #top:hover {
+      background-color: white;
+      cursor: pointer; }
+
+.footer {
+  height: 50px;
+  width: 100%;
+  margin-top: 100px;
+  background-color: #6599cc;
+  text-align: center;
+  padding-top: 10px; }
+  .footer ul {
+    margin-top: 0; }
+    .footer ul li {
+      margin: 0 10px;
+      color: white;
+      font-weight: 300; }
+    .footer ul li:nth-child(1), .footer ul li:nth-child(2) {
+      border-right: solid 1px white;
+      padding-right: 20px; }
+
+/*# sourceMappingURL=style.css.map */
