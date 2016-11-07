@@ -12,15 +12,25 @@ class App extends React.Component {
     this.state = {
       currentBuilding: 0,
       page: 'home',
-      tour: 'start'
+      tour: 'start',
+      navLinks: ['Student Life', 'Tour', 'Academics']
     }
   }
 
   mainNav(event) {
     let page = event.target.innerHTML;
+    let links = ['Student Life', 'Tour', 'Academics'];
     page = page.toLowerCase();
-    console.log(page);
-    this.setState({page: page});
+
+    if(page == 'student life') {
+      links = ['Tour', 'Home', 'Academics'];
+    } else if (page == 'academics') {
+      links = ['Student Life', 'Home', 'Tour'];
+    } else if(page == 'tour') {
+      links = ['Student Life', 'Home', 'Academics']
+    }
+
+    this.setState({page: page, navLinks: links});
   }
 
   startTour() {
@@ -81,7 +91,10 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div>
-        <Nav mainNav={this.mainNav.bind(this)}/>
+        <Nav
+          mainNav={this.mainNav.bind(this)}
+          navLinks={this.state.navLinks}
+        />
         {this.pageView()}
       </div>
     )
