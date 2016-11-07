@@ -21,6 +21,7 @@ export default class Tour extends React.Component {
             tour={this.props.tour}
             building={this.props.building}
             tourStop={this.props.tourStop}
+            back={this.props.back}
           />
         </div>
         <TourNav

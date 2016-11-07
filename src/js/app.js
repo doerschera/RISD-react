@@ -39,6 +39,10 @@ class App extends React.Component {
     this.setState({tour: 'all stops'})
   }
 
+  back() {
+    this.setState({tour: ''});
+  }
+
   tourStop(event) {
     let building = event.target.getAttribute('data-building');
     console.log(building);
@@ -55,6 +59,7 @@ class App extends React.Component {
         tour={this.state.tour}
         allStops={this.allStops.bind(this)}
         tourStop={this.tourStop.bind(this)}
+        back={this.back.bind(this)}
     />);
     } else if (this.state.page === 'academics') {
       return <Academics />;

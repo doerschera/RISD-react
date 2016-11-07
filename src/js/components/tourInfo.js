@@ -16,7 +16,10 @@ export default class TourInfo extends React.Component {
       )
     } else {
       return (
-        <AllStops tourStop={this.props.tourStop}/>
+        <AllStops
+          tourStop={this.props.tourStop}
+          back={this.props.back}
+        />
       )
     }
   }
