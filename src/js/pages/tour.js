@@ -28,7 +28,10 @@ export default class Tour extends React.Component {
         />
         <div class='row'>
           <TopButton />
-          <TourImages />
+          <TourImages
+            tour={this.props.tour}
+            building={this.props.building}
+          />
         </div>
         <Footer />
       </div>
