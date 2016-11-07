@@ -1,5 +1,6 @@
 import React from 'react';
 import buildingInfo from '../../data/building-info.js';
+import TourNav from './tourNav.js';
 
 export default class AllStops extends React.Component {
 
@@ -16,6 +17,13 @@ export default class AllStops extends React.Component {
           {allStops}
         </ul>
         <a onClick={this.props.back}>back</a>
+        <TourNav
+          nextStop={this.props.nextStop}
+          prevStop={this.props.prevStop}
+          tour={this.props.tour}
+          building={this.props.building}
+          allStops={this.props.allStops}
+        />
       </div>
     )
   }

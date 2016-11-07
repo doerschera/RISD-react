@@ -1,4 +1,5 @@
 import React from 'react';
+import TourNav from './tourNav.js';
 
 export default class BaseInfo extends React.Component {
 
@@ -25,6 +26,13 @@ export default class BaseInfo extends React.Component {
             >Start Tour</button>
           </div>
         </div>
+        <TourNav
+          nextStop={this.props.nextStop}
+          prevStop={this.props.prevStop}
+          tour={this.props.tour}
+          building={this.props.building}
+          allStops={this.props.allStops}
+        />
       </div>
     )
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import content from '../../data/building-info.js';
+import TourNav from './tourNav.js';
 
 export default class TourStop extends React.Component {
 
@@ -20,6 +21,13 @@ export default class TourStop extends React.Component {
             </p>
           </div>
         </div>
+        <TourNav
+          nextStop={this.props.nextStop}
+          prevStop={this.props.prevStop}
+          tour={this.props.tour}
+          building={this.props.building}
+          allStops={this.props.allStops}
+        />
       </div>
     )
   }

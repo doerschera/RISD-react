@@ -348,16 +348,16 @@ p {
 #startTour {
   margin-top: 20px; }
 
-#stopNav {
+#tourNav {
   position: absolute;
   bottom: 20px;
   text-align: center; }
-  #stopNav div {
+  #tourNav div {
     display: inline; }
-  #stopNav a {
+  #tourNav a {
     line-height: 24px;
     font-size: 14px; }
-  #stopNav i {
+  #tourNav i {
     color: #4dd2ff;
     width: 24px;
     vertical-align: text-bottom;

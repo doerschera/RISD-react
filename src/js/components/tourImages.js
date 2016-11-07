@@ -1,5 +1,6 @@
 import React from 'react';
 import BaseImages from './baseImages.js';
+import TopButton from './topButton.js';
 import content from '../../data/building-info.js';
 
 export default class TourImages extends React.Component {
@@ -15,6 +16,7 @@ export default class TourImages extends React.Component {
     return (
       <div class="relative col m12" id="images">
         {this.props.tour === 'start' ? <BaseImages /> : stopImages}
+        <TopButton />
       </div>
     )
   }
