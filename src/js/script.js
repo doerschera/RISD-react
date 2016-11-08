@@ -37,7 +37,25 @@ $(document).ready(function() {
         $(left).css('min-height', height2);
       }
     }
-
   }
+
+  $('#arrowRight > a').on('mouseenter', function() {
+    $('#rightLink').css('text-decoration', 'underline');
+  })
+  $('#arrowRight > a').on('mouseout', function() {
+    $('#rightLink').css('text-decoration', 'none');
+  })
+  $('#arrowDown > a').on('mouseenter', function() {
+    $('#centerLink').css('text-decoration', 'underline');
+  })
+  $('#arrowDown > a').on('mouseout', function() {
+    $('#centerLink').css('text-decoration', 'none');
+  })
+  $('#arrowLeft > a').on('mouseenter', function() {
+    $('#leftLink').css('text-decoration', 'underline');
+  })
+  $('#arrowLeft > a').on('mouseout', function() {
+    $('#leftLink').css('text-decoration', 'none');
+  })
 
 })
