@@ -8,7 +8,7 @@ export default class TourImages extends React.Component {
 
   render() {
     const stopImages = content[this.props.building].images.map((image, i) =>
-      <div class="col m6" key={i}>
+      <div class="col s6" key={i}>
         <div class="image-box">
           <img class="responsive-img" src={image} />
         </div>
@@ -16,7 +16,7 @@ export default class TourImages extends React.Component {
     )
 
     return (
-      <div class="relative col m12" id="images">
+      <div class="relative col s12" id="images">
         {this.props.tour === 'start' ? <BaseImages /> : stopImages}
         <TopButton />
       </div>
