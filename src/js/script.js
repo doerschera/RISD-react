@@ -58,4 +58,12 @@ $(document).ready(function() {
     $('#leftLink').css('text-decoration', 'none');
   })
 
+  $('a').on('click', function() {
+    $('#rightLink, #centerLink, #leftLink').css('text-decoration', 'none');
+  })
+
+  $('body').on('click', '#top', function() {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  })
+
 })
