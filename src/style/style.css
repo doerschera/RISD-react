@@ -76,8 +76,8 @@ p {
 
 .arrow {
   position: absolute; }
-  .arrow h4 {
-    color: #4dd2ff; }
+  .arrow:hover {
+    cursor: pointer; }
 
 .risd-home {
   position: absolute;

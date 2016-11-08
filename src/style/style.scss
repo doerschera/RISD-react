@@ -98,8 +98,8 @@ p {
 
 .arrow {
   position: absolute;
-  h4 {
-    color: $cyan;
+  &:hover {
+    cursor: pointer;
   }
 }
 
