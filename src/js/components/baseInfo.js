@@ -1,4 +1,5 @@
 import React from 'react';
+import TourNav from './tourNav.js';
 
 export default class BaseInfo extends React.Component {
 
@@ -12,7 +13,7 @@ export default class BaseInfo extends React.Component {
         </div>
         <div class="row">
           <div class="col m12" id="description">
-            <p>
+            <p id="introP">
               Welcome to RISD! This tour guides you through many of the buildings on campus, as well as all sixteen of our undergraduate majors. At each stop you can find images of buildings, studio spaces, and student work below. We hope this gives you insight into what life like as a RISD student. If you are interested in visitin in person or having questions about applying, please contact us through the Admissions office. Enjoy!
             </p>
           </div>
@@ -25,6 +26,13 @@ export default class BaseInfo extends React.Component {
             >Start Tour</button>
           </div>
         </div>
+        <TourNav
+          nextStop={this.props.nextStop}
+          prevStop={this.props.prevStop}
+          tour={this.props.tour}
+          building={this.props.building}
+          allStops={this.props.allStops}
+        />
       </div>
     )
   }

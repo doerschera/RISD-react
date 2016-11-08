@@ -1,10 +1,11 @@
 import React from 'react';
+let id = 'nav-home';
 
 export default class Nav extends React.Component {
 
   render() {
     return(
-      <ul class="nav">
+      <ul class="nav" id={this.props.navID}>
         <li><a href="#student-life" onClick={this.props.mainNav}>
           {this.props.navLinks[0]}
         </a></li>

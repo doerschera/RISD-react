@@ -7,36 +7,36 @@ export default class AcadRow2 extends React.Component {
     const row1 = majors.row1.map((major, i) =>
       <div class="col m3" key={i}>
         <a href={major.href} target="_blank">
-          <div class="majorCircle" id={major.short}>{major.short}</div>
+          <div class="majorCircle" id={major.id}>{major.short}</div>
         </a>
-        <p>{majors.name}</p>
+        <p>{major.name}</p>
       </div>
     )
 
     const row2 = majors.row2.map((major, i) =>
       <div class="col m3" key={i}>
         <a href={major.href} target="_blank">
-          <div class="majorCircle" id={major.short}>{major.short}</div>
+          <div class="majorCircle" id={major.id}>{major.short}</div>
         </a>
-        <p>{majors.name}</p>
+        <p>{major.name}</p>
       </div>
     )
 
     const row3 =majors.row3.map((major, i) =>
       <div class="col m3" key={i}>
         <a href={major.href} target="_blank">
-          <div class="majorCircle" id={major.short}>{major.short}</div>
+          <div class="majorCircle" id={major.id}>{major.short}</div>
         </a>
-        <p>{majors.name}</p>
+        <p>{major.name}</p>
       </div>
     )
 
     const row4 = majors.row4.map((major, i) =>
       <div class="col m3" key={i}>
         <a href={major.href} target="_blank">
-          <div class="majorCircle" id={major.short}>{major.short}</div>
+          <div class="majorCircle" id={major.id}>{major.short}</div>
         </a>
-        <p>{majors.name}</p>
+        <p>{major.name}</p>
       </div>
     )
 
