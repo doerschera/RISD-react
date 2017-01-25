@@ -1,7 +1,7 @@
 import React from 'react';
-import buildingInfo from '../../data/building-info.js';
-import NextArrow from './next-arrow.js';
-import PrevArrow from './prev-arrow.js';
+import buildingInfo from '../../../data/building-info.js';
+import NextArrow from './NextArrow.js';
+import PrevArrow from './PrevArrow.js';
 
 export default class TourNav extends React.Component {
 

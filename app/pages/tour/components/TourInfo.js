@@ -1,7 +1,7 @@
 import React from 'react';
-import TourStop from './tourStop.js';
-import BaseInfo from './baseInfo.js';
-import AllStops from './allStops.js';
+import TourStop from './TourStop.js';
+import BaseInfo from './BaseInfo.js';
+import AllStops from './AllStops.js';
 
 export default class TourInfo extends React.Component {
 
@@ -43,7 +43,6 @@ export default class TourInfo extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <div>
         {this.tourRender()}

@@ -1,5 +1,6 @@
 import React from 'react';
-import Map from './map.js';
+
+import Map from './Map.js';
 
 export default class MapWrapper extends React.Component {
 

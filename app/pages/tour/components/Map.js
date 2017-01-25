@@ -1,6 +1,7 @@
 import React from 'react';
-import buildings from '../../data/map-buildings.js';
-import styles from '../../data/map-style.js';
+
+import buildings from '../../../data/map-buildings.js';
+import styles from '../../../data/map-style.js';
 
 export default class Map extends React.Component {
   shouldComponentUpdate() {
@@ -38,7 +39,6 @@ export default class Map extends React.Component {
   }
 
    render() {
-     console.log(this.props);
      return  (
        <div id='map' ref='map'></div>
      )

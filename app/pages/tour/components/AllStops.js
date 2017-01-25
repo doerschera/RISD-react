@@ -1,6 +1,7 @@
 import React from 'react';
-import buildingInfo from '../../data/building-info.js';
-import TourNav from './tourNav.js';
+
+import buildingInfo from '../../../data/building-info.js';
+import TourNav from './TourNav.js';
 
 export default class AllStops extends React.Component {
 

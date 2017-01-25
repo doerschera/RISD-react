@@ -1,5 +1,6 @@
 import React from 'react';
-import TourNav from './tourNav.js';
+
+import TourNav from './TourNav.js';
 
 export default class BaseInfo extends React.Component {
 
