@@ -1,0 +1,174 @@
+// Academics
+#academics {
+  background-image: url('../images/pattern-grey.png');
+  background-repeat: repeat;
+  background-size: cover;
+  width: 100%;
+  position: absolute;
+}
+
+#academicsNav {
+  width: 100%;
+  text-align: center;
+  li a {
+    color: $teal;
+  }
+}
+
+.row-margin {
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+
+#foundations, #liberalArts, .majors {
+  padding: 15px;
+    h1 {
+      margin: 0 auto;
+      margin-bottom: 20px;
+      font-size: 3rem;
+      color: $teal;
+    }
+    a {
+      color: $teal;
+    }
+}
+
+#foundations {
+  @include dashed-border(bottom, $teal);
+  @include dashed-border(right, $teal);
+}
+
+#liberalArts {
+  @include dashed-border(bottom, $teal);
+}
+
+.majors {
+  padding-top: 15px;
+}
+
+#majorDescription {
+  @include dashed-border(right, $teal);
+  h1 {
+    padding-top: 20px;
+  }
+}
+
+.majorCircle {
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  color: white;
+  text-align: center;
+  background-color: $teal;
+  line-height: 50px;
+  font-weight: 300;
+}
+
+@for $i from 1 through 16 {
+  #mj#{$i} {
+    background-color: darken($base-teal, $i*5%);
+  }
+}
+
+#majorsList {
+  .row {
+    margin-bottom: 10px;
+  }
+  #mjrRow1 {
+    margin-top: 20px;
+  }
+  a:hover {
+    color: white;
+  }
+  p {
+    color: $teal;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
+#student-life {
+  .white-box {
+    padding: 15px;
+  }
+  a:hover {
+    color: $blue;
+  }
+  h2, h4 {
+    color: $blue;
+  }
+  p {
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .row {
+    @include dashed-border(bottom, $blue);
+    margin-bottom: 0;
+  }
+}
+
+.xlarge, .large, .medium, .small, .xsmall {
+  text-align: center;
+}
+
+.xlarge {
+  font-size: 4.2rem;
+}
+
+.large {
+  font-size: 3.56rem;
+}
+
+.medium {
+  font-size: 1.93rem;
+}
+
+.xsmall {
+  font-size: 1.64rem;
+}
+
+#slIntro, #slDining, #slDorms {
+  h4, h2 {
+    text-align: left;
+    color: $blue;
+  }
+  @include dashed-border(right, $blue);
+}
+
+#slGalleries, #slAlumni {
+  @include dashed-border(right, $blue);
+  @include dashed-border(left, $blue);
+}
+
+#slDorms, #slCafes, #slDining {
+  p {
+    margin-bottom: 3px;
+  }
+  h4 {
+    text-align: left;
+    margin-top: 0;
+  }
+  h4, a:hover {
+    color: $blue;
+  }
+}
+
+#slMuseum, #slAlumni, #slDorms {
+  h4, a:hover {
+    color: lighten($blue, 15%);
+  }
+}
+
+#slNatureLab, #slLibrary, #slClubs {
+  h4, a:hover {
+    color: darken($blue, 10%);
+  }
+}
+
+#slstudents, #slGalleries, #slCafes {
+  h4, a:hover {
+    color: darken($blue, 15%)
+  }
+}

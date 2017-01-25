@@ -1,0 +1,84 @@
+.risd-home {
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  z-index: 3;
+  img {
+    width: 150px;
+    opacity: 0.75;
+  }
+}
+
+.welcome-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url('images/buildings-t.png');
+  background-size: cover;
+  h1 {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    color: #4dd2ff;
+    text-align: center;
+    line-height: 125%;
+    font-size: 6rem;
+    z-index: 2;
+    margin-top: 0;
+    padding-bottom: 50px;
+  }
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.arrow {
+  z-index: 3;
+}
+
+#arrowDown {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 25px;
+  left: 50vw;
+  @include transition(bottom, 1s);
+  a, img {
+    display: inline;
+  }
+  img {
+    height: 20vh;
+  }
+  &:hover {
+    bottom: 10px;
+  }
+}
+
+#arrowRight, #arrowLeft {
+  height: 50vh;
+  top: 25vh;
+}
+
+#arrowRight {
+  @include transition(right, 1s);
+  right: 0;
+  margin-right: 25px;
+  &:hover {
+    right: 10px;
+  }
+}
+
+#arrowLeft {
+  @include transition(left, 1s);
+  left: 0;
+  margin-left: 25px;
+  &:hover {
+    left: 10px;
+  }
+}

@@ -1,0 +1,24 @@
+.nav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  z-index: 2;
+  li a {
+    color: $cyan;
+    font-size: 1.25rem;
+    margin: 0 40px;
+  }
+}
+
+#nav-academics {
+  li a {
+    color: $teal;
+  }
+}
+
+#nav-student-life {
+  li a {
+    color: $blue;
+  }
+}

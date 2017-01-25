@@ -79,6 +79,23 @@ p {
   .arrow:hover {
     cursor: pointer; }
 
+.nav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  z-index: 2; }
+  .nav li a {
+    color: #4dd2ff;
+    font-size: 1.25rem;
+    margin: 0 40px; }
+
+#nav-academics li a {
+  color: #4396b5; }
+
+#nav-student-life li a {
+  color: #3973ac; }
+
 .risd-home {
   position: absolute;
   right: -60px;
@@ -107,23 +124,6 @@ p {
     z-index: 2;
     margin-top: 0;
     padding-bottom: 50px; }
-
-.nav {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  text-align: center;
-  z-index: 2; }
-  .nav li a {
-    color: #4dd2ff;
-    font-size: 1.25rem;
-    margin: 0 40px; }
-
-#nav-academics li a {
-  color: #4396b5; }
-
-#nav-student-life li a {
-  color: #3973ac; }
 
 #background {
   position: absolute;
