@@ -1,6 +1,5 @@
 import React from 'react';
 
-import buildings from '../../../data/map-buildings.js';
 import styles from '../../../data/map-style.js';
 
 export default class Map extends React.Component {
@@ -9,6 +8,7 @@ export default class Map extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.building);
     this.map = new google.maps.Map(this.refs.map, {
       center: {lat: 41.82865, lng: -71.40526},
       zoom: 18,
@@ -16,7 +16,7 @@ export default class Map extends React.Component {
     })
 
     this.marker = new google.maps.Marker({
-      position: buildings[this.props.building].position,
+      position: this.props.building.position,
       icon: {
         url: 'http://i64.tinypic.com/352ptvr.jpg',
         scaledSize : new google.maps.Size(44, 64)
@@ -26,10 +26,10 @@ export default class Map extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.map.panTo(buildings[nextProps.building].position);
+    this.map.panTo(nextProps.building.position);
 
     this.marker = new google.maps.Marker({
-      position: buildings[nextProps.building].position,
+      position: nextProps.building.position,
       icon: {
         url: 'http://i64.tinypic.com/352ptvr.jpg',
         scaledSize : new google.maps.Size(44, 64)
