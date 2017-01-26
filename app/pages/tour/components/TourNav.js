@@ -1,5 +1,5 @@
 import React from 'react';
-import buildingInfo from '../../../data/building-info.js';
+
 import NextArrow from './NextArrow.js';
 import PrevArrow from './PrevArrow.js';
 
@@ -14,9 +14,9 @@ export default class TourNav extends React.Component {
 
     return(
       <div class="col m12" id="tourNav">
-        {this.props.tour === '' && this.props.building < (buildingInfo.length-1) ? nextArrow : null}
-        {this.props.tour != 'all stops' ? seeAll : null}
-        {this.props.tour === '' && this.props.building > 0 ? prevArrow : null}
+        {!this.props.start && !this.props.all && this.props.stop < (this.props.buildingInfo.length-1) ? nextArrow : null}
+        {!this.props.all && !this.props.start ? seeAll : null}
+        {!this.props.start && !this.props.all && this.props.stop > 0 ? prevArrow : null}
       </div>
     )
   }
