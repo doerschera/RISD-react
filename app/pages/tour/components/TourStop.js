@@ -10,15 +10,15 @@ export default class TourStop extends React.Component {
       <div class="white-box relative col m6" id='tourInfo'>
         <div class="row" id="heading">
           <div class="col m12">
-            <h3>Name</h3>
-            <p>Department</p>
-            <p>Address</p>
+            <h3>{this.props.building.name}</h3>
+            <p>{this.props.building.departments}</p>
+            <p>{this.props.building.address}</p>
           </div>
         </div>
         <div class="row">
           <div class="tourDescription m12">
             <p>
-              Description
+              {this.props.building.description}
             </p>
           </div>
         </div>
@@ -27,7 +27,11 @@ export default class TourStop extends React.Component {
           prevStop={this.props.prevStop}
           tour={this.props.tour}
           building={this.props.building}
+          buildingInfo={this.props.buildingInfo}
           allStops={this.props.allStops}
+          all={this.props.all}
+          stop={this.props.stop}
+          start={this.props.start}
         />
       </div>
     )

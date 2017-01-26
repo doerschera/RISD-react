@@ -29,7 +29,7 @@ export default class Map extends React.Component {
     this.map.panTo(nextProps.building.position);
 
     this.marker = new google.maps.Marker({
-      position: buildings[nextProps.building].position,
+      position: nextProps.building.position,
       icon: {
         url: 'http://i64.tinypic.com/352ptvr.jpg',
         scaledSize : new google.maps.Size(44, 64)

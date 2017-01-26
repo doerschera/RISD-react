@@ -28,11 +28,15 @@ export default class BaseInfo extends React.Component {
           </div>
         </div>
         <TourNav
+          buildingInfo={this.props.buildingInfo}
           nextStop={this.props.nextStop}
           prevStop={this.props.prevStop}
           tour={this.props.tour}
           building={this.props.building}
           allStops={this.props.allStops}
+          all={this.props.all}
+          stop={this.props.stop}
+          start={this.props.start}
         />
       </div>
     )
