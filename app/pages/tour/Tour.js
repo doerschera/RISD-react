@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import buildingInfo from '../../data/building-info';
 
 import MapWrapper from './components/MapWrapper.js';
 import TourInfo from './components/TourInfo.js';
@@ -6,16 +9,23 @@ import TourImages from './components/TourImages.js';
 import TourNav from './components/TourNav.js';
 import Footer from './components/Footer.js';
 
+@connect((store) => {
+  return {
+    stop: store.tour.stop,
+    start: store.tour.start
+  }
+})
 export default class Tour extends React.Component {
 
   render() {
+    let building = buildingInfo[this.props.stop];
+
     return (
       <div>
         <div class='container'>
           <div class='row'>
             <MapWrapper
-              building={this.props.building}
-              nextStop={this.props.nextStop}
+              building={building}
             />
             <TourInfo
               startTour={this.props.startTour}
@@ -31,7 +41,7 @@ export default class Tour extends React.Component {
           <div class='row'>
             <TourImages
               tour={this.props.tour}
-              building={this.props.building}
+              building={building}
             />
           </div>
         </div>
