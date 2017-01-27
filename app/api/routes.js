@@ -10,12 +10,6 @@ const Images = require('./models/images');
 
 const router = express.Router();
 
-cloudinary.config({
-  cloud_name: config.name,
-  api_key: config.key,
-  api_secret: config.secret
-});
-
 
 router.get('/api/tour-images/:stop', (req, res) => {
   console.log(req.params.stop);
@@ -30,6 +24,11 @@ router.get('/api/tour-images/:stop', (req, res) => {
 
 router.post('/api/upload', upload.single('image'), function(req, res){
     let path = req.file.path;
+    cloudinary.config({
+      cloud_name: config.name,
+      api_key: config.key,
+      api_secret: config.secret
+    });
     cloudinary.uploader.upload(path, function(result) {
   console.log(result)
 });
