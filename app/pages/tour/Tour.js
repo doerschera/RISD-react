@@ -1,13 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { getImages } from '../../helpers';
+
 import {
   nextStop,
   prevStop,
   startTour,
   allStops,
   back,
-  goToStop
+  goToStop,
+  setImages
 } from '../../actions/tourActions';
 
 import buildingInfo from '../../data/building-info';
@@ -22,7 +25,8 @@ import Footer from './components/Footer.js';
   return {
     stop: store.tour.stop,
     start: store.tour.start,
-    all: store.tour.all
+    all: store.tour.all,
+    images: store.tour.images
   }
 })
 export default class Tour extends React.Component {
@@ -35,6 +39,12 @@ export default class Tour extends React.Component {
     this.allStops = this.allStops.bind(this);
     this.back = this.back.bind(this);
     this.goToStop = this.goToStop.bind(this);
+  }
+
+  componentWillMount() {
+    getImages(buildingInfo[this.props.stop].name).then((response) => {
+      this.props.dispatch(setImages(response.data));
+    })
   }
 
   startTour() {
@@ -89,7 +99,7 @@ export default class Tour extends React.Component {
           <div class='row'>
             <TourImages
               tour={this.props.tour}
-              building={building}
+              images={this.props.images}
             />
           </div>
         </div>

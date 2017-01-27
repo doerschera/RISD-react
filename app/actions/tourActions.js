@@ -34,3 +34,10 @@ export function goToStop(stopNumber) {
     payload: stopNumber
   }
 }
+
+export function setImages(imagesArray) {
+  return {
+    type: "SET_IMAGES",
+    payload: imagesArray
+  }
+}

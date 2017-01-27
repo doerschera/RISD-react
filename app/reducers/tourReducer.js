@@ -2,7 +2,8 @@ export default function reducer(
   state={
     stop: 0,
     start: true,
-    all: false
+    all: false,
+    images: []
   },
 action) {
 
@@ -24,6 +25,9 @@ action) {
 
     case 'GO_TO_STOP':
       return {...state, stop: action.payload, all: false}
+
+    case 'SET_IMAGES':
+      return {...state, images: action.payload}
 
     default:
       return state;
