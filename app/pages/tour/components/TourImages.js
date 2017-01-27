@@ -1,6 +1,5 @@
 import React from 'react';
 
-import BaseImages from './BaseImages.js';
 import TopButton from './TopButton.js';
 import ImageUpload from './ImageUpload';
 
@@ -17,7 +16,7 @@ export default class TourImages extends React.Component {
     return (
       <div class="relative col s12" id="images">
         {this.props.images.length ? images : null}
-        <ImageUpload />
+        <ImageUpload addImage={this.props.addImage} />
         <TopButton />
       </div>
     )

@@ -6,3 +6,9 @@ export function getImages(stop) {
     return response;
   })
 }
+
+export function addImage(image) {
+  return axios.post('/api/upload', image).then((response) => {
+    console.log(response);
+  })
+}

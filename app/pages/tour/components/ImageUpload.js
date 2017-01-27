@@ -7,10 +7,16 @@ export default class ImageUpload extends React.Component {
     return(
       <div class="image-upload white-box col s8 offset-s2">
         <h4>Been there done that?</h4>
-        <form>
-          <input type='file'></input>
+        <form
+          action="/api/upload"
+          method="POST"
+          target="hidden-iframe"
+          encType="multipart/form-data"
+        >
+          <input id='file-upload' type='file' name="image"></input>
+          <button class="btn" type="submit">Add An Image</button>
         </form>
-        <button class="btn">Add An Image</button>
+        <iframe name="hidden-iframe" style={{display: 'none'}}></iframe>
       </div>
     )
   }

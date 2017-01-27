@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getImages } from '../../helpers';
+import { getImages, addImage } from '../../helpers';
 
 import {
   nextStop,
@@ -100,6 +100,7 @@ export default class Tour extends React.Component {
             <TourImages
               tour={this.props.tour}
               images={this.props.images}
+              addImage={this.addImage}
             />
           </div>
         </div>
