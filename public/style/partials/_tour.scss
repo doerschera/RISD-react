@@ -76,6 +76,9 @@
   li {
     display: block;
     text-align: center;
+    &:hover {
+      cursor: pointer;;
+    }
   }
 }
 #back {
@@ -120,4 +123,21 @@
 
 .responsive-img.materialboxed.initialized.active {
   transform: none;
+}
+
+.image-upload {
+  text-align: center;
+  padding: 20px !important;
+  margin-top: 40px;
+  h4 {
+    margin-top: 0;
+    color: $cyan;
+  }
+  input {
+    margin: 20px 0;
+    color: $cyan;
+    height: 23px;
+    line-height: 15px;
+    border-bottom: solid 1px $cyan;
+  }
 }

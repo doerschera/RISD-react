@@ -397,6 +397,8 @@ p {
 #allStops li {
   display: block;
   text-align: center; }
+  #allStops li:hover {
+    cursor: pointer; }
 
 #back {
   margin-top: 40px; }
@@ -432,6 +434,20 @@ p {
 
 .responsive-img.materialboxed.initialized.active {
   transform: none; }
+
+.image-upload {
+  text-align: center;
+  padding: 20px !important;
+  margin-top: 40px; }
+  .image-upload h4 {
+    margin-top: 0;
+    color: #4dd2ff; }
+  .image-upload input {
+    margin: 20px 0;
+    color: #4dd2ff;
+    height: 23px;
+    line-height: 15px;
+    border-bottom: solid 1px #4dd2ff; }
 
 .footer {
   height: 50px;
