@@ -22,6 +22,9 @@ action) {
     case 'BACK':
       return {...state, all: false};
 
+    case 'GO_TO_STOP':
+      return {...state, stop: action.payload, all: false}
+
     default:
       return state;
   }

@@ -6,7 +6,8 @@ import {
   prevStop,
   startTour,
   allStops,
-  back
+  back,
+  goToStop
 } from '../../actions/tourActions';
 
 import buildingInfo from '../../data/building-info';
@@ -33,6 +34,7 @@ export default class Tour extends React.Component {
     this.prevStop = this.prevStop.bind(this);
     this.allStops = this.allStops.bind(this);
     this.back = this.back.bind(this);
+    this.goToStop = this.goToStop.bind(this);
   }
 
   startTour() {
@@ -55,6 +57,10 @@ export default class Tour extends React.Component {
     this.props.dispatch(back());
   }
 
+  goToStop(event) {
+    let stopNumber = event.target.getAttribute('data-building');
+    this.props.dispatch(goToStop(stopNumber))
+  }
 
   render() {
     let building = buildingInfo[this.props.stop];
@@ -77,6 +83,7 @@ export default class Tour extends React.Component {
               nextStop={this.nextStop}
               prevStop={this.prevStop}
               stop={this.props.stop}
+              goToStop={this.goToStop}
             />
           </div>
           <div class='row'>

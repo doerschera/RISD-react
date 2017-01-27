@@ -27,3 +27,10 @@ export function back() {
     type: 'BACK'
   }
 }
+
+export function goToStop(stopNumber) {
+  return {
+    type: "GO_TO_STOP",
+    payload: stopNumber
+  }
+}

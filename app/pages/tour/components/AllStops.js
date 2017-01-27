@@ -6,7 +6,7 @@ export default class AllStops extends React.Component {
 
   render() {
     const allStops = this.props.buildingInfo.map((building, i) =>
-      <a key={i} onClick={this.props.tourStop}>
+      <a key={i} onClick={this.props.goToStop}>
         <li data-building={i}>{building.name}</li>
       </a>
     )
