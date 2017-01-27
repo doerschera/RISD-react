@@ -10,7 +10,7 @@ export default class TourImages extends React.Component {
     const stopImages = this.props.building.images.map((image, i) =>
       <div class="col s6" key={i}>
         <div class="image-box">
-          <img class="responsive-img" src={image} />
+          <img class="responsive-img materialboxed" src={image} />
         </div>
       </div>
     )

@@ -430,6 +430,9 @@ p {
       background-color: white;
       cursor: pointer; }
 
+.responsive-img.materialboxed.initialized.active {
+  transform: none; }
+
 .footer {
   height: 50px;
   width: 100vw;
