@@ -448,6 +448,12 @@ p {
     height: 23px;
     line-height: 15px;
     border-bottom: solid 1px #4dd2ff; }
+  .image-upload button {
+    display: block;
+    margin: auto; }
+
+.spinner-blue-only {
+  border-color: #4dd2ff; }
 
 .footer {
   height: 50px;

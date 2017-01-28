@@ -10,7 +10,8 @@ import {
   allStops,
   back,
   goToStop,
-  setImages
+  setImages,
+  toggleLoading
 } from '../../actions/tourActions';
 
 import buildingInfo from '../../data/building-info';
@@ -26,7 +27,8 @@ import Footer from './components/Footer.js';
     stop: store.tour.stop,
     start: store.tour.start,
     all: store.tour.all,
-    images: store.tour.images
+    images: store.tour.images,
+    loading: store.tour.loading
   }
 })
 export default class Tour extends React.Component {
@@ -73,13 +75,16 @@ export default class Tour extends React.Component {
     this.props.dispatch(goToStop(stopNumber))
   }
 
-  onImageUpload() {
+  onImageUpload(event) {
     let stop = buildingInfo[this.props.stop].name;
+    this.props.dispatch(toggleLoading());
     setTimeout(function() {
       getImages(stop).then((response) => {
         this.props.dispatch(setImages(response.data));
+        this.props.dispatch(toggleLoading());
       })
     }.bind(this), 5000);
+    // event.preventDefault();
   }
 
   render() {
@@ -113,6 +118,7 @@ export default class Tour extends React.Component {
               images={this.props.images}
               addImage={this.addImage}
               onImageUpload={this.onImageUpload}
+              loading={this.props.loading}
             />
           </div>
         </div>

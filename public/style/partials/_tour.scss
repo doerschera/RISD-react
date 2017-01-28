@@ -140,4 +140,12 @@
     line-height: 15px;
     border-bottom: solid 1px $cyan;
   }
+  button {
+    display: block;
+    margin: auto;
+  }
+}
+
+.spinner-blue-only {
+  border-color: $cyan;
 }
