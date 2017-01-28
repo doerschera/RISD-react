@@ -16,7 +16,7 @@ export default class TourImages extends React.Component {
     return (
       <div class="relative col s12" id="images">
         {this.props.images.length ? images : null}
-        <ImageUpload addImage={this.props.addImage} />
+        <ImageUpload addImage={this.props.addImage} building={this.props.building}/>
         <TopButton />
       </div>
     )
