@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getImages, addImage } from '../../helpers';
+import { getImages } from '../../helpers';
 
 import {
   nextStop,
@@ -39,6 +39,7 @@ export default class Tour extends React.Component {
     this.allStops = this.allStops.bind(this);
     this.back = this.back.bind(this);
     this.goToStop = this.goToStop.bind(this);
+    this.onImageUpload = this.onImageUpload.bind(this);
   }
 
   componentWillMount() {
@@ -72,6 +73,15 @@ export default class Tour extends React.Component {
     this.props.dispatch(goToStop(stopNumber))
   }
 
+  onImageUpload() {
+    let stop = buildingInfo[this.props.stop].name;
+    setTimeout(function() {
+      getImages(stop).then((response) => {
+        this.props.dispatch(setImages(response.data));
+      })
+    }.bind(this), 5000);
+  }
+
   render() {
     let building = buildingInfo[this.props.stop];
 
@@ -102,6 +112,7 @@ export default class Tour extends React.Component {
               tour={this.props.tour}
               images={this.props.images}
               addImage={this.addImage}
+              onImageUpload={this.onImageUpload}
             />
           </div>
         </div>

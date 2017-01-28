@@ -15,7 +15,7 @@ export default class ImageUpload extends React.Component {
         >
           <input id='file-upload' type='file' name="image"></input>
           <input name="name" value={this.props.building.name} style={{display: 'none'}}/>
-          <button class="btn" type="submit">Add An Image</button>
+          <button class="btn" type="submit" onClick={this.props.onImageUpload}>Add An Image</button>
         </form>
         <iframe name="hidden-iframe" style={{display: 'none'}}></iframe>
       </div>

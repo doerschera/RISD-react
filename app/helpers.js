@@ -7,7 +7,7 @@ export function getImages(stop) {
   })
 }
 
-export function addImage(image) {
+export function imageLoading(image) {
   return axios.post('/api/upload', image).then((response) => {
     console.log(response);
   })
