@@ -2,7 +2,9 @@ export default function reducer(
   state={
     stop: 0,
     start: true,
-    all: false
+    all: false,
+    loading: false,
+    images: []
   },
 action) {
 
@@ -21,6 +23,15 @@ action) {
 
     case 'BACK':
       return {...state, all: false};
+
+    case 'GO_TO_STOP':
+      return {...state, stop: action.payload, all: false}
+
+    case 'SET_IMAGES':
+      return {...state, images: action.payload}
+
+    case 'TOGGLE_LOADING':
+      return {...state, loading: !state.loading}
 
     default:
       return state;

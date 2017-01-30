@@ -1,12 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { getImages } from '../../helpers';
+
 import {
   nextStop,
   prevStop,
   startTour,
   allStops,
-  back
+  back,
+  goToStop,
+  setImages,
+  toggleLoading
 } from '../../actions/tourActions';
 
 import buildingInfo from '../../data/building-info';
@@ -21,7 +26,9 @@ import Footer from './components/Footer.js';
   return {
     stop: store.tour.stop,
     start: store.tour.start,
-    all: store.tour.all
+    all: store.tour.all,
+    images: store.tour.images,
+    loading: store.tour.loading
   }
 })
 export default class Tour extends React.Component {
@@ -33,6 +40,22 @@ export default class Tour extends React.Component {
     this.prevStop = this.prevStop.bind(this);
     this.allStops = this.allStops.bind(this);
     this.back = this.back.bind(this);
+    this.goToStop = this.goToStop.bind(this);
+    this.onImageUpload = this.onImageUpload.bind(this);
+  }
+
+  componentWillMount() {
+    getImages(buildingInfo[this.props.stop].name).then((response) => {
+      this.props.dispatch(setImages(response.data));
+    })
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.stop != prevProps.stop) {
+      getImages(buildingInfo[this.props.stop].name).then((response) => {
+        this.props.dispatch(setImages(response.data));
+      })
+    }
   }
 
   startTour() {
@@ -55,6 +78,22 @@ export default class Tour extends React.Component {
     this.props.dispatch(back());
   }
 
+  goToStop(event) {
+    let stopNumber = event.target.getAttribute('data-building');
+    this.props.dispatch(goToStop(stopNumber))
+  }
+
+  onImageUpload(event) {
+    let stop = buildingInfo[this.props.stop].name;
+    this.props.dispatch(toggleLoading());
+    setTimeout(function() {
+      getImages(stop).then((response) => {
+        this.props.dispatch(setImages(response.data));
+        this.props.dispatch(toggleLoading());
+      })
+    }.bind(this), 5000);
+    // event.preventDefault();
+  }
 
   render() {
     let building = buildingInfo[this.props.stop];
@@ -77,12 +116,17 @@ export default class Tour extends React.Component {
               nextStop={this.nextStop}
               prevStop={this.prevStop}
               stop={this.props.stop}
+              goToStop={this.goToStop}
             />
           </div>
           <div class='row'>
             <TourImages
-              tour={this.props.tour}
               building={building}
+              tour={this.props.tour}
+              images={this.props.images}
+              addImage={this.addImage}
+              onImageUpload={this.onImageUpload}
+              loading={this.props.loading}
             />
           </div>
         </div>

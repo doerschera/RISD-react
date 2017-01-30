@@ -27,3 +27,23 @@ export function back() {
     type: 'BACK'
   }
 }
+
+export function goToStop(stopNumber) {
+  return {
+    type: "GO_TO_STOP",
+    payload: stopNumber
+  }
+}
+
+export function setImages(imagesArray) {
+  return {
+    type: "SET_IMAGES",
+    payload: imagesArray
+  }
+}
+
+export function toggleLoading() {
+  return {
+    type: 'TOGGLE_LOADING'
+  }
+}
