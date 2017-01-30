@@ -8,10 +8,8 @@ import Tour from '../pages/tour/Tour.js';
 module.exports = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
-      <Route path="home" component={Home} />
+      <IndexRoute component={Home} />
       <Route path="/tour" component={Tour} />
     </Route>
-
-    <IndexRoute component={Home} />
   </Router>
 )

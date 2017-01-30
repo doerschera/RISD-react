@@ -50,6 +50,14 @@ export default class Tour extends React.Component {
     })
   }
 
+  componentDidUpdate(prevProps) {
+    if(this.props.stop != prevProps.stop) {
+      getImages(buildingInfo[this.props.stop].name).then((response) => {
+        this.props.dispatch(setImages(response.data));
+      })
+    }
+  }
+
   startTour() {
     this.props.dispatch(startTour());
   }
