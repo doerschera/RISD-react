@@ -38,7 +38,6 @@ export default class TourInfo extends React.Component {
     } else {
       return (
         <AllStops
-          tourStop={this.props.tourStop}
           back={this.props.back}
           nextStop={this.props.nextStop}
           prevStop={this.props.prevStop}
@@ -49,6 +48,7 @@ export default class TourInfo extends React.Component {
           all={this.props.all}
           stop={this.props.stop}
           start={this.props.start}
+          goToStop={this.props.goToStop}
         />
       )
     }
