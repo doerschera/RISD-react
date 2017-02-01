@@ -1,6 +1,6 @@
 import React from 'react';
 import content from '../../data/student-life-content.js';
-import Footer from '../components/footer.js';
+import Footer from './components/footer.js';
 
 export default class StudentLife extends React.Component {
 
@@ -71,7 +71,6 @@ export default class StudentLife extends React.Component {
             {row5}
           </div>
         </div>
-        <Footer footerID={this.props.footerID}/>
       </div>
     )
   }

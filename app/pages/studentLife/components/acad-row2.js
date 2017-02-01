@@ -1,5 +1,5 @@
 import React from 'react';
-import majors from '../../data/majors.js';
+import majors from '../../../data/majors.js';
 
 export default class AcadRow2 extends React.Component {
 
