@@ -455,6 +455,28 @@ p {
 .spinner-blue-only {
   border-color: #4dd2ff; }
 
+.ask-heading, .dropdown-title {
+  color: #00ace6; }
+
+.ask-intro a {
+  color: black;
+  text-decoration: underline; }
+
+.dropdown {
+  padding: 15px; }
+  .dropdown i {
+    color: #00ace6;
+    font-size: 48px;
+    vertical-align: middle; }
+
+.dropdown-body {
+  display: none; }
+  .dropdown-body li {
+    display: list-item;
+    list-style: initial;
+    color: #00ace6;
+    margin-left: 30px; }
+
 .footer {
   height: 50px;
   width: 100vw;

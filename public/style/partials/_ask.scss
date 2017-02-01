@@ -1,0 +1,31 @@
+
+.ask-heading, .dropdown-title {
+  color: $middle-cyan;
+}
+
+.ask-intro {
+  // @include dashed-border(bottom, $middle-cyan);
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}
+
+.dropdown {
+  padding: 15px;
+  i {
+    color: $middle-cyan;
+    font-size: 48px;
+    vertical-align: middle;
+  }
+}
+
+.dropdown-body {
+  display: none;
+  li {
+    display: list-item;
+    list-style: initial;
+    color: $middle-cyan;
+    margin-left: 30px;
+  }
+}
