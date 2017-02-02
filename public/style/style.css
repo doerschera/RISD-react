@@ -455,6 +455,9 @@ p {
 .spinner-blue-only {
   border-color: #4dd2ff; }
 
+#ask {
+  padding: 30px; }
+
 .ask-heading, .dropdown-title {
   color: #00ace6; }
 
@@ -463,11 +466,16 @@ p {
   text-decoration: underline; }
 
 .dropdown {
-  padding: 15px; }
+  padding: 0 15px;
+  margin-top: 50px; }
   .dropdown i {
     color: #00ace6;
     font-size: 48px;
     vertical-align: middle; }
+
+.dropdown-title {
+  border-bottom: dashed 2px #00ace6;
+  cursor: pointer; }
 
 .dropdown-body {
   display: none; }
@@ -475,7 +483,19 @@ p {
     display: list-item;
     list-style: initial;
     color: #00ace6;
-    margin-left: 30px; }
+    margin-left: 30px;
+    cursor: pointer; }
+
+.sign-in {
+  text-align: center;
+  padding: 30px !important;
+  margin-top: 50px; }
+  .sign-in h5 {
+    color: #00ace6;
+    margin-bottom: 30px; }
+
+#signUpButton {
+  margin-left: 30px; }
 
 .footer {
   height: 50px;

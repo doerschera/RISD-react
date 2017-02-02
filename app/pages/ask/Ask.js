@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Dropdown from './components/Dropdown';
+import SignInBox from './components/SignInBox';
 import Footer from './components/footer';
 
 export default class Ask extends React.Component {
@@ -32,7 +33,7 @@ export default class Ask extends React.Component {
       <div>
         <div class="container">
           <div class="row row-margin">
-            <div class="col m12 white-box">
+            <div class="col m12 white-box" id="ask">
               <div class="ask-intro">
                 <h2 class="ask-heading">Questions&#63; Answers.</h2>
                 <p>
@@ -40,9 +41,11 @@ export default class Ask extends React.Component {
                 </p>
               </div>
               <Dropdown toggleDropdown={this.toggleDropdown}/>
+              <Dropdown toggleDropdown={this.toggleDropdown}/>
             </div>
           </div>
         </div>
+        <SignInBox />
         <Footer />
       </div>
     )
