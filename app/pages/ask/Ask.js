@@ -1,10 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { showSignIn, showSignUp } from '../../actions/askActions';
 
 import Dropdown from './components/Dropdown';
 import SignInBox from './components/SignInBox';
 import Footer from './components/footer';
 
+@connect((store) => {
+  return {
+    signIn: store.ask.signIn,
+    signUp: store.ask.signUp
+  }
+})
+
 export default class Ask extends React.Component {
+  constructor() {
+    super();
+
+    this.showSignIn = this.showSignIn.bind(this);
+  }
 
   toggleDropdown(event) {
     let dropdownBody = event.target.parentNode.querySelector('.dropdown-body');
@@ -25,7 +40,10 @@ export default class Ask extends React.Component {
       dropdownBody.classList.remove('open');
       event.target.parentNode.querySelector('.dropdown-arrow').innerHTML="arrow_drop_down";
     }
+  }
 
+  showSignIn() {
+    this.props.dispatch(showSignIn());
   }
 
   render() {
@@ -45,7 +63,11 @@ export default class Ask extends React.Component {
             </div>
           </div>
         </div>
-        <SignInBox />
+        <SignInBox
+          signIn={this.props.signIn}
+          signUp={this.props.signUp}
+          showSignIn={this.showSignIn}
+        />
         <Footer />
       </div>
     )

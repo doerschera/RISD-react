@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Buttons from './SignInBoxButtons';
+import SignInForm from './SignInForm';
+
 export default class SignInBox extends React.Component {
 
   render() {
@@ -8,8 +11,10 @@ export default class SignInBox extends React.Component {
         <div class='row'>
           <div class='col m12 white-box sign-in'>
             <h5>Ask a question, share an answer</h5>
-            <button class='btn' id="signInButton">Sign In</button>
-            <button class='btn' id="signUpButton">Sign Up</button>
+            {this.props.signIn ? <SignInForm /> : null}
+            {!this.props.signIn && !this.props.signUp ? <Buttons
+              showSignIn={this.props.showSignIn}
+            /> : null}
           </div>
         </div>
       </div>

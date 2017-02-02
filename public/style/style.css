@@ -494,8 +494,24 @@ p {
     color: #00ace6;
     margin-bottom: 30px; }
 
-#signUpButton {
+#signUpBoxButton {
   margin-left: 30px; }
+
+input[type=text], input[type=password] {
+  border-bottom-color: #4dd2ff;
+  color: #4dd2ff;
+  display: block;
+  margin: auto; }
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]) {
+  border-bottom-color: #4dd2ff;
+  box-shadow: 0 1px 0 0 #4dd2ff; }
+
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label {
+  color: #4dd2ff; }
+
+#signInButton {
+  margin-top: 30px; }
 
 .footer {
   height: 50px;

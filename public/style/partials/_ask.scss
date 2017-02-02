@@ -51,6 +51,26 @@
   }
 }
 
-#signUpButton {
+#signUpBoxButton {
   margin-left: 30px;
+}
+
+input[type=text], input[type=password] {
+  border-bottom-color: $cyan;
+  color: $cyan;
+  display: block;
+  margin: auto;
+}
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]) {
+  border-bottom-color: $cyan;
+  box-shadow: 0 1px 0 0 $cyan;
+}
+
+input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label {
+  color: $cyan;
+}
+
+#signInButton {
+  margin-top: 30px;
 }
