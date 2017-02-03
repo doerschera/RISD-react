@@ -49,6 +49,9 @@
     color: $middle-cyan;
     margin-bottom: 30px;
   }
+  .btn {
+    background-color: $middle-cyan;
+  }
 }
 
 #signUpBoxButton {
@@ -56,21 +59,67 @@
 }
 
 input[type=text], input[type=password] {
-  border-bottom-color: $cyan;
-  color: $cyan;
+  border-bottom-color: $middle-cyan;
+  color: $middle-cyan;
   display: block;
   margin: auto;
 }
 
 input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]) {
-  border-bottom-color: $cyan;
-  box-shadow: 0 1px 0 0 $cyan;
+  border-bottom-color: $middle-cyan;
+  box-shadow: 0 1px 0 0 $middle-cyan;
 }
 
 input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label {
-  color: $cyan;
+  color: $middle-cyan;
 }
 
-#signInButton {
+#signInButton, #signUpButton {
   margin-top: 30px;
+}
+
+.switch-form {
+  margin-top: 15px;
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: $middle-cyan;
+  }
+}
+
+.sign-up-form {
+  h6 {
+    color: $middle-cyan;
+    margin: 10px;
+  }
+  label:nth-child(5) {
+    margin: 0 20px;
+  }
+}
+
+input[type=radio].with-gap:checked+label, .select-wrapper span.caret {
+  color: $middle-cyan;
+}
+
+input[type=radio].with-gap:checked+label:before,
+input[type=radio].with-gap:checked+label:after {
+  border: 2px solid $middle-cyan !important;
+}
+
+input[type=radio].with-gap:checked+label:after {
+background-color: $middle-cyan !important;
+}
+
+input.select-dropdown, .select-dropdown li>span {
+  color: $middle-cyan;
+}
+
+.select-dropdown li.disabled>span {
+  color: #9e9e9e;
+}
+
+input[type=text].select-dropdown {
+  margin-top: 20px;
+  margin-bottom: 0;
+  border-bottom-color: $middle-cyan;
 }

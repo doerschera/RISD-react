@@ -17,6 +17,9 @@ export default class SignInForm extends React.Component {
           <div class="col m12">
             <button class="btn" id="signInButton">Sign In</button>
           </div>
+          <div class="col m12 switch-form">
+            <a>or sign up</a>
+          </div>
         </div>
       </div>
     )

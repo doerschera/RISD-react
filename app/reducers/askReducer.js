@@ -1,7 +1,7 @@
 export default function reducer(
   state={
     signIn: false,
-    signUp: false
+    signUp: true
   },
 action) {
 
