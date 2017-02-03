@@ -68,7 +68,6 @@ $(document).ready(function() {
 
 
   $('.materialboxed').materialbox();
-  $(document).ready(function() {
-    $('select').material_select();
-  });
+  $('select').material_select();
+
 })

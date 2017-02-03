@@ -12,10 +12,11 @@ export default class SignInBox extends React.Component {
         <div class='row'>
           <div class='col m12 white-box sign-in'>
             <h5>Ask a question, share an answer</h5>
-            {this.props.signIn ? <SignInForm /> : null}
-            {this.props.signUp ? <SignUpForm /> : null}
-            {!this.props.signIn && !this.props.signUp ? <Buttons
+            {this.props.signInForm ? <SignInForm showSignUp={this.props.showSignUp}/> : null}
+            {this.props.signUpForm ? <SignUpForm showSignIn={this.props.showSignIn}/> : null}
+            {!this.props.signInForm && !this.props.signUpForm ? <Buttons
               showSignIn={this.props.showSignIn}
+              showSignUp={this.props.showSignUp}
             /> : null}
           </div>
         </div>

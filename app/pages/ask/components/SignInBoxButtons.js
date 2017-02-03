@@ -10,7 +10,11 @@ export default class SignInBoxButtons extends React.Component {
           id="signInBoxButton"
           onClick={this.props.showSignIn}
         >Sign In</button>
-        <button class='btn' id="signUpBoxButton">Sign Up</button>
+        <button
+          class='btn'
+          id="signUpBoxButton"
+          onClick={this.props.showSignUp}
+        >Sign Up</button>
       </div>
     )
   }

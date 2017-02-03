@@ -71,7 +71,7 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
 }
 
 input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label {
-  color: $middle-cyan;
+  color: #9e9e9e;
 }
 
 #signInButton, #signUpButton {
@@ -108,18 +108,4 @@ input[type=radio].with-gap:checked+label:after {
 
 input[type=radio].with-gap:checked+label:after {
 background-color: $middle-cyan !important;
-}
-
-input.select-dropdown, .select-dropdown li>span {
-  color: $middle-cyan;
-}
-
-.select-dropdown li.disabled>span {
-  color: #9e9e9e;
-}
-
-input[type=text].select-dropdown {
-  margin-top: 20px;
-  margin-bottom: 0;
-  border-bottom-color: $middle-cyan;
 }

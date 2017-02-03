@@ -1,16 +1,16 @@
 export default function reducer(
   state={
-    signIn: false,
-    signUp: true
+    signInForm: false,
+    signUpForm: false
   },
 action) {
 
   switch(action.type) {
     case "SHOW_SIGN_IN":
-      return {...state, signIn: true};
+      return {...state, signInForm: true, signUpForm: false};
 
     case "SHOW_SIGN_UP":
-      return {...state, signUp: true}
+      return {...state, signUpForm: true, signInForm: false}
 
     default:
       return state;

@@ -9,8 +9,8 @@ import Footer from './components/footer';
 
 @connect((store) => {
   return {
-    signIn: store.ask.signIn,
-    signUp: store.ask.signUp
+    signInForm: store.ask.signInForm,
+    signUpForm: store.ask.signUpForm
   }
 })
 
@@ -19,6 +19,7 @@ export default class Ask extends React.Component {
     super();
 
     this.showSignIn = this.showSignIn.bind(this);
+    this.showSignUp = this.showSignUp.bind(this);
   }
 
   toggleDropdown(event) {
@@ -46,6 +47,10 @@ export default class Ask extends React.Component {
     this.props.dispatch(showSignIn());
   }
 
+  showSignUp() {
+    this.props.dispatch(showSignUp());
+  }
+
   render() {
     return (
       <div>
@@ -64,9 +69,10 @@ export default class Ask extends React.Component {
           </div>
         </div>
         <SignInBox
-          signIn={this.props.signIn}
-          signUp={this.props.signUp}
+          signInForm={this.props.signInForm}
+          signUpForm={this.props.signUpForm}
           showSignIn={this.showSignIn}
+          showSignUp={this.showSignUp}
         />
         <Footer />
       </div>
