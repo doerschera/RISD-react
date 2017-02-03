@@ -1,7 +1,21 @@
 export default function reducer(
   state={
     signInForm: false,
-    signUpForm: false
+    signUpForm: false,
+    userSignIn: {
+      email: '',
+      password: ''
+    },
+    userSignUp: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password1: '',
+      password2: '',
+      applicantType: '',
+      currentGrade: '',
+      areaOfInterest: ''
+    }
   },
 action) {
 

@@ -7,11 +7,17 @@ export default class SignInForm extends React.Component {
       <div class='row'>
         <div class='sign-in-form'>
           <div class="input-field col m6 offset-m3">
-            <input id="signInEmail" type="text"></input>
+            <input
+              id="signInEmail"
+              type="text" value={this.props.userSignIn.email}
+            ></input>
             <label for="signInEmail">Email</label>
           </div>
           <div class='input-field col m6 offset-m3'>
-            <input id="signInPassword" type="password"></input>
+            <input
+              id="signInPassword"
+              type="password" value={this.props.userSignIn.password}
+            ></input>
             <label for="signInPassword">Password</label>
           </div>
           <div class="col m12">

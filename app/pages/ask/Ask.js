@@ -10,7 +10,9 @@ import Footer from './components/footer';
 @connect((store) => {
   return {
     signInForm: store.ask.signInForm,
-    signUpForm: store.ask.signUpForm
+    signUpForm: store.ask.signUpForm,
+    userSignIn: store.ask.userSignIn,
+    userSignUp: store.ask.userSignUp
   }
 })
 
@@ -73,6 +75,8 @@ export default class Ask extends React.Component {
           signUpForm={this.props.signUpForm}
           showSignIn={this.showSignIn}
           showSignUp={this.showSignUp}
+          userSignIn={this.props.userSignIn}
+          userSignUp={this.props.userSignUp}
         />
         <Footer />
       </div>
