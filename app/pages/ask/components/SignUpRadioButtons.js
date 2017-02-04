@@ -7,6 +7,7 @@ export default class SignUpRadioButtons extends React.Component {
     return(
       <RadioButtonGroup name="applicantType"
         class='radio-button-group'
+        onChange={this.props.signUpOnChange}
       >
         <RadioButton
           value="freshman"

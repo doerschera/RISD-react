@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import update from 'immutability-helper';
 
-import { showSignIn, showSignUp } from '../../actions/askActions';
+import { showSignIn, showSignUp, signUpChange } from '../../actions/askActions';
 
 import Dropdown from './components/Dropdown';
 import SignInBox from './components/SignInBox';
@@ -22,6 +23,9 @@ export default class Ask extends React.Component {
 
     this.showSignIn = this.showSignIn.bind(this);
     this.showSignUp = this.showSignUp.bind(this);
+    this.signUpOnChange = this.signUpOnChange.bind(this);
+    this.majorSelectOnChange = this.majorSelectOnChange.bind(this);
+    this.gradeSelectOnChange = this.gradeSelectOnChange.bind(this);
   }
 
   toggleDropdown(event) {
@@ -53,6 +57,31 @@ export default class Ask extends React.Component {
     this.props.dispatch(showSignUp());
   }
 
+  signUpOnChange(event, value) {
+    let newUserSignUp = update(this.props.userSignUp, {
+      [event.target.name]: {$set: event.target.value}
+    })
+
+    this.props.dispatch(signUpChange(newUserSignUp));
+  }
+
+  majorSelectOnChange(event, key, payload) {
+    console.log(payload);
+    let newUserSignUp = update(this.props.userSignUp, {
+      areaOfInterest: {$set: payload}
+    })
+
+    this.props.dispatch(signUpChange(newUserSignUp));
+  }
+
+  gradeSelectOnChange(event, key, payload) {
+    let newUserSignUp = update(this.props.userSignUp, {
+      currentGrade: {$set: payload}
+    })
+
+    this.props.dispatch(signUpChange(newUserSignUp));
+  }
+
   render() {
     return (
       <div>
@@ -77,6 +106,9 @@ export default class Ask extends React.Component {
           showSignUp={this.showSignUp}
           userSignIn={this.props.userSignIn}
           userSignUp={this.props.userSignUp}
+          signUpOnChange={this.signUpOnChange}
+          majorSelectOnChange={this.majorSelectOnChange}
+          gradeSelectOnChange={this.gradeSelectOnChange}
         />
         <Footer />
       </div>

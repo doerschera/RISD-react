@@ -26,6 +26,9 @@ action) {
     case "SHOW_SIGN_UP":
       return {...state, signUpForm: true, signInForm: false}
 
+    case "SIGN_UP_CHANGE":
+      return {...state, userSignUp: action.payload}
+
     default:
       return state;
   }

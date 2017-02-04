@@ -15,53 +15,63 @@ export default class SignUpForm extends React.Component {
         <div class='sign-up-form'>
           <div class='input-field col m3 offset-m3'>
             <input
-              id="first-name"
+              name="firstName"
               type="text"
               value={this.props.userSignUp.firstName}
+              onChange={this.props.signUpOnChange}
             ></input>
             <label for="first-name">First Name*</label>
           </div>
           <div class='input-field col m3'>
             <input
-              id="last-name"
+              name="lastName"
               type="text"
               value={this.props.userSignUp.lastName}
+              onChange={this.props.signUpOnChange}
             ></input>
             <label for="last-name">Last Name*</label>
           </div>
           <div class='input-field col m6 offset-m3'>
             <input
-              id="email"
+              name="email"
               type="text"
               value={this.props.userSignUp.email}
+              onChange={this.props.signUpOnChange}
             ></input>
             <label for="email">Email Address*</label>
           </div>
           <div class='input-field col m3 offset-m3'>
             <input
-              id="password1"
+              name="password1"
               type="password"
               value={this.props.userSignUp.password1}
+              onChange={this.props.signUpOnChange}
             ></input>
             <label for="password">Password*</label>
           </div>
           <div class='input-field col m3'>
             <input
-              id="password2"
+              name="password2"
               type="password"
               value={this.props.userSignUp.password2}
+              onChange={this.props.signUpOnChange}
             ></input>
             <label for="password2">Retype Password*</label>
           </div>
           <div class="input-field col m8 offset-m2">
             <h6>I will apply as a:</h6>
-            <RadioButtons />
+            <RadioButtons userSignUp={this.props.userSignUp}
+            signUpOnChange={this.props.signUpOnChange}
+            />
           </div>
           {this.props.userSignUp.applicantType === 'freshman' ?
-          <GradeDropdown userSignUp={this.props.userSignUp}/>
+          <GradeDropdown
+          gradeSelectOnChange={this.props.gradeSelectOnChange}
+          userSignUp={this.props.userSignUp}/>
           : null}
          <div class="col m6 offset-m3">
            <SelectField
+             name='areaOfInterest'
              value={this.props.userSignUp.areaOfInterest}
              style={{marginTop: 20, fontFamily: 'Open Sans'}}
              floatingLabelText="Area of Interest"
@@ -76,9 +86,10 @@ export default class SignUpForm extends React.Component {
              selectedMenuItemStyle={{color: '#4dd2ff'}}
              iconStyle={{fill: '#00ace6'}}
              maxHeight={200}
+             onChange={this.props.majorSelectOnChange}
            >
            {majors.map((major) => {
-             return <MenuItem value={major} key={major} primaryText={major}/>
+             return <MenuItem value={major} key={major} primaryText={major} />
            })}
           </SelectField>
          </div>
