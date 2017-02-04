@@ -524,7 +524,8 @@ input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([
 
 .sign-up-form h6 {
   color: #00ace6;
-  margin: 10px; }
+  margin: 20px;
+  margin-top: 30px; }
 .sign-up-form label:nth-child(5) {
   margin: 0 20px; }
 
@@ -535,8 +536,11 @@ input[type=radio].with-gap:checked + label:before,
 input[type=radio].with-gap:checked + label:after {
   border: 2px solid #00ace6 !important; }
 
-input[type=radio].with-gap:checked + label:after {
-  background-color: #00ace6 !important; }
+input[type=radio] {
+  margin-right: 20px; }
+
+.radio-button-group svg {
+  fill: #00ace6 !important; }
 
 .footer {
   height: 50px;

@@ -2,6 +2,7 @@ import React from 'react';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+import RadioButtons from './SignUpRadioButtons';
 import GradeDropdown from './GradeDropdown';
 
 const majors = ['Apparel', 'Architecture', 'Ceramics', 'Film/Animation/Video', 'Furniture', 'Glass', 'Graphic Design', 'Illustration', 'Industrial Design', 'Interior Architecture', 'Jewelry & Metalsmithing', 'Painting', 'Photograhpy', 'Printmaking', 'Sculpture', 'Textiles']
@@ -52,22 +53,17 @@ export default class SignUpForm extends React.Component {
             ></input>
             <label for="password2">Retype Password*</label>
           </div>
-          <div class="input-field col m6 offset-m3">
+          <div class="input-field col m8 offset-m2">
             <h6>I will apply as a:</h6>
-            <input class="with-gap" type="radio" id="freshman" />
-            <label for="freshman">Freshman</label>
-            <input class="with-gap" type="radio" id="transfer" />
-            <label for="transfer">Transfer</label>
-            <input class="with-gap" type="radio" id="graduate" />
-            <label for="graduate">Graduate</label>
+            <RadioButtons />
           </div>
           {this.props.userSignUp.applicantType === 'freshman' ?
           <GradeDropdown userSignUp={this.props.userSignUp}/>
-          : null}  
+          : null}
          <div class="col m6 offset-m3">
            <SelectField
              value={this.props.userSignUp.areaOfInterest}
-             style={{marginTop: 20}}
+             style={{marginTop: 20, fontFamily: 'Open Sans'}}
              floatingLabelText="Area of Interest"
              floatingLabelStyle={{
                textAlign: 'left',
