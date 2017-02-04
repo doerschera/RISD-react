@@ -10,6 +10,13 @@ export function showSignUp() {
   }
 }
 
+export function signInChange(data) {
+  return {
+    type: "SIGN_IN_CHANGE",
+    payload: data
+  }
+}
+
 export function signUpChange(data) {
   return {
     type: "SIGN_UP_CHANGE",

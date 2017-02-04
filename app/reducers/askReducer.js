@@ -29,6 +29,9 @@ action) {
     case "SIGN_UP_CHANGE":
       return {...state, userSignUp: action.payload}
 
+    case "SIGN_IN_CHANGE":
+      return {...state, userSignIn: action.payload}
+
     default:
       return state;
   }
