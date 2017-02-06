@@ -63,7 +63,6 @@ export default class Ask extends React.Component {
   }
 
   signInOnChange(event) {
-    console.log(event.target.name, event.target.value);
     let newUserSignIn = update(this.props.userSignIn, {
       [event.target.name]: {$set: event.target.value}
     })
