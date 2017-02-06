@@ -455,6 +455,93 @@ p {
 .spinner-blue-only {
   border-color: #4dd2ff; }
 
+#ask {
+  padding: 30px; }
+
+.ask-heading, .dropdown-title {
+  color: #00ace6; }
+
+.ask-intro a {
+  color: black;
+  text-decoration: underline; }
+
+.dropdown {
+  padding: 0 15px;
+  margin-top: 50px; }
+  .dropdown i {
+    color: #00ace6;
+    font-size: 48px;
+    vertical-align: middle; }
+
+.dropdown-title {
+  border-bottom: dashed 2px #00ace6;
+  cursor: pointer; }
+
+.dropdown-body {
+  display: none; }
+  .dropdown-body li {
+    display: list-item;
+    list-style: initial;
+    color: #00ace6;
+    margin-left: 30px;
+    cursor: pointer; }
+
+.sign-in {
+  text-align: center;
+  padding: 30px !important;
+  margin-top: 50px; }
+  .sign-in h5 {
+    color: #00ace6;
+    margin-bottom: 30px; }
+  .sign-in .btn {
+    background-color: #00ace6; }
+
+#signUpBoxButton {
+  margin-left: 30px; }
+
+input[type=text], input[type=password] {
+  border-bottom-color: #00ace6;
+  color: #00ace6;
+  display: block;
+  margin: auto; }
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]) {
+  border-bottom-color: #00ace6;
+  box-shadow: 0 1px 0 0 #00ace6; }
+
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label {
+  color: #9e9e9e; }
+
+#signInButton, #signUpButton {
+  margin-top: 30px; }
+
+.switch-form {
+  margin-top: 15px; }
+  .switch-form a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #00ace6; }
+
+.sign-up-form h6 {
+  color: #00ace6;
+  margin: 20px;
+  margin-top: 30px; }
+.sign-up-form label:nth-child(5) {
+  margin: 0 20px; }
+
+input[type=radio].with-gap:checked + label, .select-wrapper span.caret {
+  color: #00ace6; }
+
+input[type=radio].with-gap:checked + label:before,
+input[type=radio].with-gap:checked + label:after {
+  border: 2px solid #00ace6 !important; }
+
+input[type=radio] {
+  margin-right: 20px; }
+
+.radio-button-group svg {
+  fill: #00ace6 !important; }
+
 .footer {
   height: 50px;
   width: 100vw;
