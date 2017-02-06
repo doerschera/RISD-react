@@ -1,14 +1,37 @@
-import axios from 'axios';
+'use strict'
+var axios = require('axios');
 
-export function getImages(stop) {
-  return axios.get('/api/tour-images/'+stop).then((response) => {
-    console.log(response);
-    return response;
-  })
+var helpers = {
+  getImages: function (stop) {
+    return axios.get('/api/tour-images/'+stop).then((response) => {
+      console.log(response);
+      return response;
+    })
+  },
+  imageLoading: function (image) {
+    return axios.post('/api/upload', image).then((response) => {
+      console.log(response);
+    })
+  },
+  newUser: function (data) {
+    return axios.post('/api/newUser', data).then((response) => {
+      return response;
+    })
+  },
+  randomColor: function () {
+    let hex = "ABCDEF0123456789".split('');
+    let color = '#';
+
+    for(var i = 0; i < 6; i++) {
+      let index = Math.floor(Math.random()*16);
+      color += hex[index];
+    }
+
+    return color;
+  }
 }
 
-export function imageLoading(image) {
-  return axios.post('/api/upload', image).then((response) => {
-    console.log(response);
-  })
-}
+
+
+
+module.exports = helpers;

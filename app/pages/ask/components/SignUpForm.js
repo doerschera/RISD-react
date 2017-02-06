@@ -94,7 +94,11 @@ export default class SignUpForm extends React.Component {
           </SelectField>
          </div>
         <div class="col m12">
-          <button class="btn" id="signUpButton">Sign Up</button>
+          <button
+            class="btn"
+            id="signUpButton"
+            onClick={this.props.addNewUser}
+          >Sign Up</button>
         </div>
         <div class="col m12 switch-form">
           <a onClick={this.props.showSignIn}>or sign in</a>

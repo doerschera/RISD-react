@@ -8,6 +8,8 @@ import {
   signInChange,
   signUpChange } from '../../actions/askActions';
 
+import {newUser} from '../../helpers';
+
 import Dropdown from './components/Dropdown';
 import SignInBox from './components/SignInBox';
 import Footer from './components/footer';
@@ -31,6 +33,7 @@ export default class Ask extends React.Component {
     this.signUpOnChange = this.signUpOnChange.bind(this);
     this.majorSelectOnChange = this.majorSelectOnChange.bind(this);
     this.gradeSelectOnChange = this.gradeSelectOnChange.bind(this);
+    this.addNewUser = this.addNewUser.bind(this);
   }
 
   toggleDropdown(event) {
@@ -95,6 +98,17 @@ export default class Ask extends React.Component {
     this.props.dispatch(signUpChange(newUserSignUp));
   }
 
+  addNewUser() {
+    newUser(this.props.userSignUp).then(function() {
+      let signUp = this.props.newUser;
+      for(var field in signUp) {
+        return signUp[field] = ''
+      }
+
+      this.props.dispatch(signUpChange(signUp));
+    })
+  }
+
   render() {
     return (
       <div>
@@ -123,6 +137,7 @@ export default class Ask extends React.Component {
           signUpOnChange={this.signUpOnChange}
           majorSelectOnChange={this.majorSelectOnChange}
           gradeSelectOnChange={this.gradeSelectOnChange}
+          addNewUser={this.addNewUser}
         />
         <Footer />
       </div>

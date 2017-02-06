@@ -1,8 +1,10 @@
 'use strict'
 
 const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-const Images = new mongoose.Scheman({
+
+const Users = new mongoose.Schema({
   firstName: {
     type: String,
     required: true
