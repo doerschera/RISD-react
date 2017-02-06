@@ -99,15 +99,33 @@ export default class Ask extends React.Component {
   }
 
   addNewUser() {
-    newUser(this.props.userSignUp).then(function() {
-      let signUp = this.props.newUser;
-      for(var field in signUp) {
-        return signUp[field] = ''
-      }
+    if(this.props.userSignUp.password1 != this.props.userSignUp.password2) {
+      document.getElementById('errorMsg').innerHTML = "Password information does not match. Please check your password."
+      setTimeout(function() {
+        document.getElementById('errorMsg').innerHTML = ''
+      }, 5000);
+    } else {
+      newUser(this.props.userSignUp).then((response) => {
 
-      this.props.dispatch(signUpChange(signUp));
-    })
+        if(response.data != "") {
+          document.getElementById('errorMsg').innerHTML = response.data;
+          setTimeout(function() {
+            document.getElementById('errorMsg').innerHTML = ''
+          }, 5000);
+          return false;
+        }
+
+        let signUp = this.props.userSignUp;
+        for(var field in signUp) {
+          signUp[field] = ''
+        }
+        console.log(signUp);
+
+        this.props.dispatch(signUpChange(signUp));
+      })
+    }
   }
+
 
   render() {
     return (

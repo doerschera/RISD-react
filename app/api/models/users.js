@@ -7,15 +7,15 @@ var Schema = mongoose.Schema;
 const Users = new mongoose.Schema({
   firstName: {
     type: String,
-    required: true
+    required: [true, 'Please add your first name.']
   },
   lastName: {
     type: String,
-    required: true
+    required: [true, 'Please add your last name.']
   },
   email: {
     type: String,
-    unique: true,
+    unique: [true, "You've already created an account! Please sign in."],
     required: true,
     match: [/.+\@.+\..+/, 'Please enter a valid email address.']
   },

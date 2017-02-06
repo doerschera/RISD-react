@@ -56,6 +56,15 @@ router.post('/api/newUser', function(req, res) {
   user.save((err) => {
     if(err) {
       console.log(err);
+      let errMsg;
+
+      for(var field in err.errors) {
+        errMsg = err.errors[field].message;
+      }
+
+      res.send(errMsg);
+    } else {
+      res.status(204).end();
     }
   })
 })

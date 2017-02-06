@@ -94,6 +94,7 @@ export default class SignUpForm extends React.Component {
           </SelectField>
          </div>
         <div class="col m12">
+          <p id="errorMsg"></p>
           <button
             class="btn"
             id="signUpButton"
