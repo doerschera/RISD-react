@@ -53,7 +53,7 @@ router.post('/api/newUser', function(req, res) {
   data.questions = [];
 
   let user = new Users(data);
-  user.save((result, err) => {
+  user.save((err, result) => {
     if(err) {
       console.log(err);
       let errMsg;
@@ -64,10 +64,8 @@ router.post('/api/newUser', function(req, res) {
 
       res.send(errMsg);
     } else {
-      Users.find({_id: user._id}, (result, err) => {
-        console.log(result);
-        res.send(result);
-      })
+      res.send(result);
+
     }
   })
 })

@@ -109,14 +109,25 @@ export default class Ask extends React.Component {
       }, 5000);
     } else {
       newUser(this.props.userSignUp).then((response) => {
-        console.log(response);
-        if(response.data != "") {
+
+        if(typeof response.data != "object") {
           document.getElementById('errorMsg').innerHTML = response.data;
           setTimeout(function() {
             document.getElementById('errorMsg').innerHTML = ''
           }, 5000);
           return false;
         }
+
+        let newUser = update(this.props.currentUser, {
+          status: {$set: true},
+          firstName: {$set: response.data.firstName},
+          lastName: {$set: response.data.lastName},
+          email: {$set: response.data.email},
+          id: {$set: response.data._id},
+          color: {$set: response.data.color}
+        })
+
+        this.props.dispatch(currentUser(newUser));
 
         let signUp = this.props.userSignUp;
         for(var field in signUp) {
