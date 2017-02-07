@@ -29,3 +29,10 @@ export function clearNewUser() {
     type: "CLEAR_NEW_USER"
   }
 }
+
+export function currentUser(data) {
+  return {
+    type: "CURRENT_USER",
+    payload: data
+  }
+}

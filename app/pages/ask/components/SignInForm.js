@@ -23,7 +23,12 @@ export default class SignInForm extends React.Component {
             <label for="signInPassword">Password</label>
           </div>
           <div class="col m12">
-            <button class="btn" id="signInButton">Sign In</button>
+            <p id="errorMsg"></p>
+            <button
+              class="btn"
+              id="signInButton"
+              onClick={this.props.signIn}
+            >Sign In</button>
           </div>
           <div class="col m12 switch-form">
             <a onClick={this.props.showSignUp}>or sign up</a>

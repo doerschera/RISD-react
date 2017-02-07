@@ -53,7 +53,7 @@ router.post('/api/newUser', function(req, res) {
   data.questions = [];
 
   let user = new Users(data);
-  user.save((err) => {
+  user.save((result, err) => {
     if(err) {
       console.log(err);
       let errMsg;
@@ -64,7 +64,33 @@ router.post('/api/newUser', function(req, res) {
 
       res.send(errMsg);
     } else {
-      res.status(204).end();
+      Users.find({_id: user._id}, (result, err) => {
+        console.log(result);
+        res.send(result);
+      })
+    }
+  })
+})
+
+router.post('/api/signIn', function(req, res) {
+  var data = req.body;
+
+  Users.find({email: data.email}, (err, result) => {
+    if(err) {
+      console.log(error);
+    }
+
+    if(result.length) {
+      console.log(result);
+      var hashedPassword = result[0].password;
+      var verify = passwordHash.verify(data.password, hashedPassword);
+      if(verify) {
+        res.send(result[0]);
+      } else {
+        res.send(false);
+      }
+    } else {
+      res.send(false);
     }
   })
 })

@@ -2,19 +2,24 @@
 var axios = require('axios');
 
 var helpers = {
-  getImages: function (stop) {
+  getImages: function(stop) {
     return axios.get('/api/tour-images/'+stop).then((response) => {
       console.log(response);
       return response;
     })
   },
-  imageLoading: function (image) {
+  imageLoading: function(image) {
     return axios.post('/api/upload', image).then((response) => {
       console.log(response);
     })
   },
-  newUser: function (data) {
+  newUser: function(data) {
     return axios.post('/api/newUser', data).then((response) => {
+      return response;
+    })
+  },
+  signIn: function(data) {
+    return axios.post('/api/signIn', data).then((response) => {
       return response;
     })
   },

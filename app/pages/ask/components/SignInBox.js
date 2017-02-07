@@ -16,6 +16,7 @@ export default class SignInBox extends React.Component {
               <SignInForm showSignUp={this.props.showSignUp}
               userSignIn={this.props.userSignIn}
               signInOnChange={this.props.signInOnChange}
+              signIn={this.props.signIn}
               />
               : null}
             {this.props.signUpForm ?

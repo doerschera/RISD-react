@@ -6,9 +6,10 @@ import {
   showSignIn,
   showSignUp,
   signInChange,
-  signUpChange } from '../../actions/askActions';
+  signUpChange,
+  currentUser } from '../../actions/askActions';
 
-import {newUser} from '../../helpers';
+import { newUser, signIn } from '../../helpers';
 
 import Dropdown from './components/Dropdown';
 import SignInBox from './components/SignInBox';
@@ -19,7 +20,8 @@ import Footer from './components/footer';
     signInForm: store.ask.signInForm,
     signUpForm: store.ask.signUpForm,
     userSignIn: store.ask.userSignIn,
-    userSignUp: store.ask.userSignUp
+    userSignUp: store.ask.userSignUp,
+    currentUser: store.ask.currentUser
   }
 })
 
@@ -34,6 +36,7 @@ export default class Ask extends React.Component {
     this.majorSelectOnChange = this.majorSelectOnChange.bind(this);
     this.gradeSelectOnChange = this.gradeSelectOnChange.bind(this);
     this.addNewUser = this.addNewUser.bind(this);
+    this.signIn = this.signIn.bind(this);
   }
 
   toggleDropdown(event) {
@@ -106,7 +109,7 @@ export default class Ask extends React.Component {
       }, 5000);
     } else {
       newUser(this.props.userSignUp).then((response) => {
-
+        console.log(response);
         if(response.data != "") {
           document.getElementById('errorMsg').innerHTML = response.data;
           setTimeout(function() {
@@ -124,6 +127,39 @@ export default class Ask extends React.Component {
         this.props.dispatch(signUpChange(signUp));
       })
     }
+  }
+
+  signIn() {
+    signIn(this.props.userSignIn).then((response) => {
+      console.log(response);
+
+      if(response.data) {
+        let newUser = update(this.props.currentUser, {
+          status: {$set: true},
+          firstName: {$set: response.data.firstName},
+          lastName: {$set: response.data.lastName},
+          email: {$set: response.data.email},
+          id: {$set: response.data._id},
+          color: {$set: response.data.color}
+        })
+
+        let clearUser = update(this.props.userSignIn, {
+          email: {$set: ''},
+          password: {$set: ''}
+        })
+
+        this.props.dispatch(currentUser(newUser));
+        this.props.dispatch(signInChange(clearUser));
+      } else {
+        document.getElementById('errorMsg').innerHTML = "Email or password is incorrect!"
+        setTimeout(() => {
+          document.getElementById('errorMsg').innerHTML = ''
+        }, 5000);
+      }
+
+
+
+    });
   }
 
 
@@ -144,6 +180,7 @@ export default class Ask extends React.Component {
             </div>
           </div>
         </div>
+        {this.props.currentUser.status ? null :
         <SignInBox
           signInForm={this.props.signInForm}
           signUpForm={this.props.signUpForm}
@@ -156,7 +193,8 @@ export default class Ask extends React.Component {
           majorSelectOnChange={this.majorSelectOnChange}
           gradeSelectOnChange={this.gradeSelectOnChange}
           addNewUser={this.addNewUser}
-        />
+          signIn={this.signIn}
+        /> }
         <Footer />
       </div>
     )

@@ -15,6 +15,14 @@ export default function reducer(
       applicantType: '',
       currentGrade: '',
       areaOfInterest: ''
+    },
+    currentUser: {
+      status: false,
+      firstName: '',
+      lastName: '',
+      email: '',
+      id: '',
+      color: ''
     }
   },
 action) {
@@ -31,6 +39,9 @@ action) {
 
     case "SIGN_IN_CHANGE":
       return {...state, userSignIn: action.payload}
+
+    case "CURRENT_USER":
+      return {...state, currentUser: action.payload}
 
     default:
       return state;
