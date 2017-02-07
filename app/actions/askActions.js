@@ -23,3 +23,16 @@ export function signUpChange(data) {
     payload: data
   }
 }
+
+export function clearNewUser() {
+  return {
+    type: "CLEAR_NEW_USER"
+  }
+}
+
+export function currentUser(data) {
+  return {
+    type: "CURRENT_USER",
+    payload: data
+  }
+}
