@@ -45,12 +45,37 @@
   text-align: center;
   padding: 30px !important;
   margin-top: 50px;
-  h5 {
+  h5, h6 {
     color: $middle-cyan;
     margin-bottom: 30px;
   }
   .btn {
     background-color: $middle-cyan;
+  }
+}
+
+textarea.materialize-textarea {
+  border-bottom: solid 1px $middle-cyan;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: solid 1px $middle-cyan;
+  box-shadow: 0 1px 0 0 $middle-cyan;
+}
+
+.add-comment {
+  margin-top: 30px;
+  padding: 15px;
+  h6 {
+    color: $middle-cyan;
+    font-size: 20px;
+  }
+  .btn {
+    background-color: $middle-cyan;
+    float: right;
+    margin-bottom: 20px;
   }
 }
 
@@ -118,13 +143,13 @@ input[type=radio] {
 }
 
 .circleImg {
-  border: solid 1px $cyan;
+  border: solid 1px $middle-cyan;
   border-radius: 100%;
   height: 85px;
   width: 85px;
   overflow: hidden;
   margin-left: 20px;
-  background-color: $cyan;
+  background-color: $middle-cyan;
 }
 
 .small-circle-img {
@@ -132,11 +157,11 @@ input[type=radio] {
   height: 70px;
   width: 70px;
   margin-top: 1em;
-  border: solid 1px $cyan;
+  border: solid 1px $middle-cyan;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  background-color: $cyan;
+  background-color: $middle-cyan;
 }
 
 .question-box {
@@ -144,6 +169,7 @@ input[type=radio] {
 }
 
 .question-heading {
+  padding-top: 30px;
   h1 {
     width: 100%;
     margin: 0;

@@ -6,6 +6,7 @@ import QuestionHeading from './components/QuestionHeading';
 import QuestionBody from './components/QuestionBody';
 import Comment from './components/Comment';
 import SignInBox from './components/SignInBox';
+import AddComment from './components/AddComment';
 
 
 export default class Question extends React.Component {
@@ -15,8 +16,8 @@ export default class Question extends React.Component {
       <div>
         <div class='container'>
           <div class='row row-margin'>
+            <BackArrow />
             <div class='white-box col s12 question-box'>
-              <BackArrow />
               <QuestionHeading />
               <QuestionBody />
             </div>
@@ -28,6 +29,7 @@ export default class Question extends React.Component {
             </div>
           </div>
         </div>
+        <AddComment />
         <SignInBox />
       </div>
     )
