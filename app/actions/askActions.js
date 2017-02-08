@@ -59,7 +59,11 @@ export function addNewUser(user) {
       .then((response) => {
         console.log(response);
         if(typeof response.data != 'object') {
-          throw response
+          if (response.data === "") {
+            throw "You've already created an account! Please sign in."
+            return false;
+          }
+          throw response.data
           return false;
         }
 

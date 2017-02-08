@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { signIn, signInChange } from '../../../actions/askActions';
 
+import Error from './Error';
+
 @connect((store) => {
   return {
     userSignIn: store.ask.userSignIn
@@ -53,7 +55,7 @@ export default class SignInForm extends React.Component {
             <label for="signInPassword">Password</label>
           </div>
           <div class="col m12">
-            <p id="errorMsg"></p>
+            <Error />
             <button
               class="btn"
               id="signInButton"

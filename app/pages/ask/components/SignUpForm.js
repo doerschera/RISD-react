@@ -13,6 +13,7 @@ import {
 
 import RadioButtons from './SignUpRadioButtons';
 import GradeDropdown from './GradeDropdown';
+import Error from './Error';
 
 const majors = ['Apparel', 'Architecture', 'Ceramics', 'Film/Animation/Video', 'Furniture', 'Glass', 'Graphic Design', 'Illustration', 'Industrial Design', 'Interior Architecture', 'Jewelry & Metalsmithing', 'Painting', 'Photograhpy', 'Printmaking', 'Sculpture', 'Textiles']
 
@@ -125,7 +126,7 @@ export default class SignUpForm extends React.Component {
           </SelectField>
          </div>
         <div class="col m12">
-          <p id="errorMsg"></p>
+          <Error />
           <button
             class="btn"
             id="signUpButton"
