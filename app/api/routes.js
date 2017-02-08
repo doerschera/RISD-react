@@ -52,6 +52,11 @@ router.post('/api/newUser', function(req, res) {
   data.comments =[];
   data.questions = [];
 
+  if(data.password1 != data.password2) {
+    res.send('Passwords do not match!');
+    return false;
+  }
+
   let user = new Users(data);
   user.save((err, result) => {
     if(err) {

@@ -14,7 +14,7 @@ export default function reducer(
       password2: '',
       applicantType: '',
       currentGrade: '',
-      areaOfInterest: ''
+      areaOfInterest: '',
     },
     currentUser: {
       status: false,
@@ -23,7 +23,8 @@ export default function reducer(
       email: '',
       id: '',
       color: ''
-    }
+    },
+    error: ''
   },
 action) {
 
@@ -37,11 +38,20 @@ action) {
     case "SIGN_UP_CHANGE":
       return {...state, userSignUp: action.payload}
 
+    case "MAJOR_SELECT_CHANGE":
+      return {...state, userSignUp: {...userSignUp, areaOfInterest: action.payload}}
+
+    case "GRADE_SELECT_CHANGE":
+      return {...state, userSignUp: {...userSignUp, currentGrade: action.payload}}
+
     case "SIGN_IN_CHANGE":
       return {...state, userSignIn: action.payload}
 
     case "CURRENT_USER":
       return {...state, currentUser: action.payload}
+
+    case "SET_ERROR":
+      return {...state, error: action.payload}
 
     default:
       return state;

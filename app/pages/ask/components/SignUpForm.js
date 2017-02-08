@@ -1,4 +1,5 @@
 import React from 'react';
+import update from 'immutability-helper';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
@@ -7,7 +8,36 @@ import GradeDropdown from './GradeDropdown';
 
 const majors = ['Apparel', 'Architecture', 'Ceramics', 'Film/Animation/Video', 'Furniture', 'Glass', 'Graphic Design', 'Illustration', 'Industrial Design', 'Interior Architecture', 'Jewelry & Metalsmithing', 'Painting', 'Photograhpy', 'Printmaking', 'Sculpture', 'Textiles']
 
+@connect((store) => {
+  return {
+    userSignUp: store.ask.userSignUp,
+  }
+}, (dispatch) => {
+  return {
+    showSignIn: () => {
+      dispatch(showSignIn());
+    }
+    majorSelectOnChange: (event, key, payload) => {
+      dispatch(majorSelectOnChange(payload));
+    },
+    gradeSelectOnChange: (event, key, payload) => {
+      dispatch(gradeSelectOnChange(payload));
+    },
+    addNewUser: (newUser) => {
+      dispatch(addNewUser(newUser));
+    }
+  }
+})
+
 export default class SignUpForm extends React.Component {
+
+  signUpOnChange(event, value) {
+    let newUserSignUp = update(this.props.userSignUp, {
+      [event.target.name]: {$set: event.target.value}
+    })
+
+    this.props.dispatch(signUpChange(newUserSignUp));
+  }
 
   render() {
     return(
@@ -98,7 +128,7 @@ export default class SignUpForm extends React.Component {
           <button
             class="btn"
             id="signUpButton"
-            onClick={this.props.addNewUser}
+            onClick={this.props.addNewUser(this.props.userSignUp)}
           >Sign Up</button>
         </div>
         <div class="col m12 switch-form">
