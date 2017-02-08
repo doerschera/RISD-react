@@ -36,22 +36,28 @@ action) {
       return {...state, signUpForm: true, signInForm: false}
 
     case "SIGN_UP_CHANGE":
-      return {...state, userSignUp: action.payload}
+      return {...state, userSignUp: {...state.userSignUp, [action.payload.field]: action.payload.value}}
 
     case "MAJOR_SELECT_CHANGE":
-      return {...state, userSignUp: {...userSignUp, areaOfInterest: action.payload}}
+      return {...state, userSignUp: {...state.userSignUp, areaOfInterest: action.payload}}
 
     case "GRADE_SELECT_CHANGE":
-      return {...state, userSignUp: {...userSignUp, currentGrade: action.payload}}
+      return {...state, userSignUp: {...state.userSignUp, currentGrade: action.payload}}
 
     case "SIGN_IN_CHANGE":
-      return {...state, userSignIn: action.payload}
+      return {...state, userSignIn: {...state.userSignIn, [action.payload.field]: action.payload.value}}
 
     case "CURRENT_USER":
       return {...state, currentUser: action.payload}
 
+    case "CLEAR_NEW_USER":
+      return {...state, userSignUp: action.payload}
+
     case "SET_ERROR":
       return {...state, error: action.payload}
+
+    case "CLEAR_ERROR":
+      return {...state, error: ''}
 
     default:
       return state;

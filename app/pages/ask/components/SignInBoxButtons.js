@@ -1,5 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { showSignIn, showSignUp } from '../../../actions/askActions';
+
+@connect((store) => {return {}}, (dispatch) => {
+  return {
+    showSignIn: () => {
+      dispatch(showSignIn())
+    },
+    showSignUp: () => {
+      dispatch(showSignUp())
+    }
+  }
+})
 export default class SignInBoxButtons extends React.Component {
 
   render() {

@@ -13,8 +13,8 @@ module.exports = (
       <IndexRoute component={Home} />
       <Route path="/tour" component={Tour} />
       <Route path="/studentlife" component={Academics} />
-      <Route path="/ask/:id" component={Ask}>
-      
+      <Route path="/ask" component={Ask}>
+
       </Route>
     </Route>
   </Router>

@@ -1,7 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import update from 'immutability-helper';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+
+import {
+  showSignIn,
+  majorSelectOnChange,
+  addNewUser,
+  signUpChange
+} from '../../../actions/askActions';
 
 import RadioButtons from './SignUpRadioButtons';
 import GradeDropdown from './GradeDropdown';
@@ -16,28 +24,25 @@ const majors = ['Apparel', 'Architecture', 'Ceramics', 'Film/Animation/Video', '
   return {
     showSignIn: () => {
       dispatch(showSignIn());
-    }
+    },
     majorSelectOnChange: (event, key, payload) => {
       dispatch(majorSelectOnChange(payload));
     },
-    gradeSelectOnChange: (event, key, payload) => {
-      dispatch(gradeSelectOnChange(payload));
+    addNewUser: (user) => {
+      dispatch(addNewUser(user));
     },
-    addNewUser: (newUser) => {
-      dispatch(addNewUser(newUser));
+    signUpOnChange: (event) => {
+      let data = {
+        field: event.target.name,
+        value: event.target.value
+      }
+
+      dispatch(signUpChange(data));
     }
   }
 })
 
 export default class SignUpForm extends React.Component {
-
-  signUpOnChange(event, value) {
-    let newUserSignUp = update(this.props.userSignUp, {
-      [event.target.name]: {$set: event.target.value}
-    })
-
-    this.props.dispatch(signUpChange(newUserSignUp));
-  }
 
   render() {
     return(
@@ -90,15 +95,11 @@ export default class SignUpForm extends React.Component {
           </div>
           <div class="input-field col m8 offset-m2">
             <h6>I will apply as a:</h6>
-            <RadioButtons userSignUp={this.props.userSignUp}
+            <RadioButtons
             signUpOnChange={this.props.signUpOnChange}
             />
           </div>
-          {this.props.userSignUp.applicantType === 'freshman' ?
-          <GradeDropdown
-          gradeSelectOnChange={this.props.gradeSelectOnChange}
-          userSignUp={this.props.userSignUp}/>
-          : null}
+          {this.props.userSignUp.applicantType === 'freshman' ? <GradeDropdown /> : null}
          <div class="col m6 offset-m3">
            <SelectField
              name='areaOfInterest'
@@ -128,7 +129,7 @@ export default class SignUpForm extends React.Component {
           <button
             class="btn"
             id="signUpButton"
-            onClick={this.props.addNewUser(this.props.userSignUp)}
+            onClick={() => (this.props.addNewUser(this.props.userSignUp))}
           >Sign Up</button>
         </div>
         <div class="col m12 switch-form">

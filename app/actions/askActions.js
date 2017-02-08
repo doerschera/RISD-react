@@ -47,31 +47,84 @@ export function setError(err) {
   }
 }
 
-export function addNewUser(newUser) {
-  (dispatch) => {
-    return axios.post('/api/newUser', newUser)
+export function clearError() {
+  return {
+    type: "CLEAR_ERROR"
+  }
+}
+
+export function addNewUser(user) {
+  return (dispatch) => {
+    return axios.post('/api/newUser', user)
       .then((response) => {
-        if(typeof response != 'object') {
+        console.log(response);
+        if(typeof response.data != 'object') {
           throw response
+          return false;
         }
 
-        dispatch(currentUser(response));
+        response.data.status = true;
+        dispatch(currentUser(response.data));
 
-        let signUp = this.props.userSignUp;
-        for(var field in signUp) {
-          signUp[field] = ''
+        let signUp = {
+          firstName: '',
+          lastName: '',
+          email: '',
+          password1: '',
+          password2: '',
+          applicantType: '',
+          currentGrade: '',
+          areaOfInterest: '',
         }
-        dispatch(signUpChange(signUp));
+        dispatch(clearNewUser(signUp));
       })
       .catch((err) => {
         dispatch(setError(err));
+        setTimeout(() => {
+          dispatch(clearError());
+        }, 5000)
       })
   }
 }
 
-export function clearNewUser() {
+export function signIn(user) {
+  return (dispatch) => {
+    return axios.post('/api/signIn', user)
+      .then((response) => {
+        if(!response.data) {
+          throw "Email or password is incorrect!";
+          return false;
+        }
+
+        response.data.status = true;
+        dispatch(currentUser(response.data));
+
+        let signUp = {
+          firstName: '',
+          lastName: '',
+          email: '',
+          password1: '',
+          password2: '',
+          applicantType: '',
+          currentGrade: '',
+          areaOfInterest: '',
+        }
+        dispatch(clearNewUser(signUp));
+
+      })
+      .catch((err) => {
+        dispatch(setError(err));
+        setTimeout(() => {
+          dispatch(clearError());
+        }, 5000)
+      })
+  }
+}
+
+export function clearNewUser(data) {
   return {
-    type: "CLEAR_NEW_USER"
+    type: "CLEAR_NEW_USER",
+    payload: data
   }
 }
 
