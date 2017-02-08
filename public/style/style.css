@@ -568,6 +568,8 @@ input[type=radio] {
 .question-body {
   margin-bottom: 20px; }
 
+.back-icon a {
+  color: black; }
 .back-icon i {
   color: black;
   margin-left: 10px;
