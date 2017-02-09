@@ -192,3 +192,22 @@ export function setQuestions(data) {
     payload: data
   }
 }
+
+export function getCurrentQuestion(id) {
+  return (dispatch) => {
+    console.log(id);
+    return axios.get('/api/singleQuestion/'+id)
+      .then((response) => {
+        console.log(response);
+
+        dispatch(setCurretQuestion(response.data));
+      })
+  }
+}
+
+export function setCurretQuestion(data) {
+  return {
+    type: "SET_CURRENT_QUESTION",
+    payload: data
+  }
+}

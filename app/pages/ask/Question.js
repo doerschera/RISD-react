@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { getCurrentQuestion } from '../../actions/askActions';
 
 import BackArrow from './components/BackArrow';
 import QuestionHeading from './components/QuestionHeading';
@@ -7,8 +10,13 @@ import Comment from './components/Comment';
 import SignInBox from './components/SignInBox';
 import AddComment from './components/AddComment';
 
-
+@connect((store) => {
+  return {}
+})
 export default class Question extends React.Component {
+  componentWillMount() {
+    this.props.dispatch(getCurrentQuestion(this.props.params.id))
+  }
 
   render() {
     return(

@@ -110,7 +110,18 @@ router.get('/api/allQuestions',  function(req, res) {
     console.log(result);
     res.send(result);
   })
+})
 
+router.get('/api/singleQuestion/:id', function(req, res) {
+  let id = req.params.id;
+  console.log(id);
+  Questions.find({_id: id})
+    .populate('comments')
+    .populate('user')
+    .exec(function(err, result) {
+      console.log(result);
+      res.send(result[0]);
+    })
 })
 
 module.exports = router;

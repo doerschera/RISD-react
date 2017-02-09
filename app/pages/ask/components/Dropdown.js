@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import { getQuestions } from '../../../actions/askActions';
@@ -49,10 +50,10 @@ export default class Dropdown extends React.Component {
             <div class="dropdown-body closed">
               <ul>
                 {this.props.questions ? this.props.questions.applying.map((question) => {
-                 return <li
+                 return <Link to={`/question/${question._id}`}><li
                    key={question._id}
                    data-question={question._id}
-                 >{question.title}</li>
+                 >{question.title}</li></Link>
              }) : null}
               </ul>
             </div>
@@ -67,10 +68,10 @@ export default class Dropdown extends React.Component {
             <div class="dropdown-body closed">
               <ul>
                 {this.props.questions ? this.props.questions.majors.map((question) => {
-                 return <li
+                 return <Link to={`/question/${question._id}`}><li
                    key={question._id}
                    data-question={question._id}
-                 >{question.title}</li>
+                 >{question.title}</li></Link>
              }) : null}
               </ul>
             </div>
@@ -85,10 +86,10 @@ export default class Dropdown extends React.Component {
             <div class="dropdown-body closed">
               <ul>
                 {this.props.questions ? this.props.questions.liberalArts.map((question) => {
-                 return <li
+                 return <Link to={`/question/${question._id}`}><li
                    key={question._id}
                    data-question={question._id}
-                 >{question.title}</li>
+                 >{question.title}</li></Link>
              }) : null}
               </ul>
             </div>
@@ -103,10 +104,10 @@ export default class Dropdown extends React.Component {
             <div class="dropdown-body closed">
               <ul>
                 {this.props.questions ? this.props.questions.studentLife.map((question) => {
-                 return <li
+                 return <Link to={`/question/${question._id}`}><li
                    key={question._id}
                    data-question={question._id}
-                 >{question.title}</li>
+                 >{question.title}</li></Link>
              }) : null}
               </ul>
             </div>
@@ -121,10 +122,10 @@ export default class Dropdown extends React.Component {
             <div class="dropdown-body closed">
               <ul>
                 {this.props.questions ? this.props.questions.careers.map((question) => {
-                 return <li
+                 return <Link to={`/question/${question._id}`}><li
                    key={question._id}
                    data-question={question._id}
-                 >{question.title}</li>
+                 >{question.title}</li></Link>
              }) : null}
               </ul>
             </div>
@@ -139,10 +140,10 @@ export default class Dropdown extends React.Component {
             <div class="dropdown-body closed">
               <ul>
                 {this.props.questions ? this.props.questions.other.map((question) => {
-                 return <li
+                 return <Link to={`/question/${question._id}`}><li
                    key={question._id}
                    data-question={question._id}
-                 >{question.title}</li>
+                 >{question.title}</li> </Link>
              }) : null}
               </ul>
             </div>

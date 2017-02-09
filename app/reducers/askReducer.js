@@ -25,6 +25,7 @@ export default function reducer(
       color: ''
     },
     questions: false,
+    currentQuestion: false,
     error: ''
   },
 action) {
@@ -56,6 +57,9 @@ action) {
 
     case "SET_QUESTIONS":
       return {...state, questions: action.payload}
+
+    case "SET_CURRENT_QUESTION":
+      return {...state, currentQuestion: action.payload}
 
     case "SET_ERROR":
       return {...state, error: action.payload}
