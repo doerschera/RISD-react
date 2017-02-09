@@ -9,6 +9,8 @@ const passwordHash = require('password-hash');
 
 const Images = require('./models/images');
 const Users = require('./models/users');
+const Questions = require('./models/questions');
+const Comments = require('./models/comments');
 let helpers = require('../helpers');
 
 const router = express.Router();
@@ -96,6 +98,19 @@ router.post('/api/signIn', function(req, res) {
       res.send(false);
     }
   })
+})
+
+router.get('/api/allQuestions',  function(req, res) {
+
+  Questions.find({}, (err, result) => {
+    if(err) {
+      console.log(err);
+    }
+
+    console.log(result);
+    res.send(result);
+  })
+
 })
 
 module.exports = router;

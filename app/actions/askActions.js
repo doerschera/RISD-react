@@ -138,3 +138,57 @@ export function currentUser(data) {
     payload: data
   }
 }
+
+export function getQuestions() {
+  return (dispatch) => {
+    return axios.get('/api/allQuestions')
+      .then((response) => {
+        console.log(response);
+        let questions = {
+          applying: [],
+          majors: [],
+          liberalArts: [],
+          studentLife: [],
+          careers: [],
+          other: []
+        };
+
+        response.data.forEach((item) => {
+          switch(item.category) {
+            case 'Applying':
+              questions.applying.push(item);
+            break;
+
+            case 'Majors':
+              questions.majors.push(item);
+            break;
+
+            case 'Liberal Arts':
+              questions.liberalArts.push(item);
+            break;
+
+            case 'Student Life':
+              questions.studentLife.push(item);
+            break;
+
+            case 'Careers':
+              questions.careers.push(item);
+            break;
+
+            case 'Other':
+              questions.other.push(item);
+            break;
+          }
+        })
+
+        dispatch(setQuestions(questions));
+      })
+  }
+}
+
+export function setQuestions(data) {
+  return {
+    type: "SET_QUESTIONS",
+    payload: data
+  }
+}

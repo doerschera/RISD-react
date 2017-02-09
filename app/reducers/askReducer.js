@@ -24,6 +24,7 @@ export default function reducer(
       id: '',
       color: ''
     },
+    questions: false,
     error: ''
   },
 action) {
@@ -52,6 +53,9 @@ action) {
 
     case "CLEAR_NEW_USER":
       return {...state, userSignUp: action.payload}
+
+    case "SET_QUESTIONS":
+      return {...state, questions: action.payload}
 
     case "SET_ERROR":
       return {...state, error: action.payload}

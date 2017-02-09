@@ -4,27 +4,6 @@ import Dropdown from './Dropdown';
 
 export default class QuestionList extends React.Component {
 
-  toggleDropdown(event) {
-    let dropdownBody = event.target.parentNode.querySelector('.dropdown-body');
-
-    if(event.target.classList.contains('dropdown-arrow')) {
-      dropdownBody = event.target.parentNode.parentNode.querySelector('.dropdown-body');
-    }
-
-    if(dropdownBody.classList.contains('closed')) {
-      dropdownBody.style.display = 'block';
-      dropdownBody.classList.add('open');
-      dropdownBody.classList.remove('closed');
-
-      event.target.parentNode.querySelector('.dropdown-arrow').innerHTML="arrow_drop_up";
-    } else if(dropdownBody.classList.contains('open')) {
-      dropdownBody.style.display = 'none';
-      dropdownBody.classList.add('closed');
-      dropdownBody.classList.remove('open');
-      event.target.parentNode.querySelector('.dropdown-arrow').innerHTML="arrow_drop_down";
-    }
-  }
-
   render() {
     return(
       <div class="container">
@@ -36,8 +15,7 @@ export default class QuestionList extends React.Component {
                 Applying to college can be stressful and confusing, but we're here to help . From portfolio submission to financial aid, we've got you covered. Browse answers by topic below, ask a question, or <a href="mailto: admissions@risd.edu">contact the admissions office directly.</a>
               </p>
             </div>
-            <Dropdown toggleDropdown={this.toggleDropdown}/>
-            <Dropdown toggleDropdown={this.toggleDropdown}/>
+            <Dropdown />
           </div>
         </div>
       </div>

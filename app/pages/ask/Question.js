@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import BackArrow from './components/BackArrow';
 import QuestionHeading from './components/QuestionHeading';

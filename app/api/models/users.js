@@ -35,11 +35,11 @@ const Users = new mongoose.Schema({
   color: String,
   comments: [{
     type: Schema.Types.ObjectId,
-    ref: 'Comment'
+    ref: 'Comments'
   }],
   questions: [{
     type: Schema.Types.ObjectId,
-    ref: 'Question'
+    ref: 'Questions'
   }]
 })
 

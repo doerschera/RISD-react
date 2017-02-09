@@ -5,7 +5,6 @@ import Main from '../pages/main/Main.js';
 import Home from '../pages/home/Home.js';
 import Tour from '../pages/tour/Tour.js';
 import Academics from '../pages/studentLife/academics';
-import All from '../pages/ask/All';
 import Ask from '../pages/ask/Ask';
 import Question from '../pages/ask/Question';
 
