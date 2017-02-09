@@ -11,7 +11,9 @@ import SignInBox from './components/SignInBox';
 import AddComment from './components/AddComment';
 
 @connect((store) => {
-  return {}
+  return {
+    currentQuestion: store.ask.currentQuestion
+  }
 })
 export default class Question extends React.Component {
   componentWillMount() {
@@ -32,7 +34,15 @@ export default class Question extends React.Component {
           <div class='row'>
             <div class="s10 offset-s2 comment-box">
               <h5 class="col offset-s2 comments-title">Answers</h5>
-              <Comment />
+              {this.props.currentQuestion ?
+              this.props.currentQuestion.comments.map((comment) => {
+                  return <Comment
+                    key={comment._id}
+                    body={comment.body}
+                    user={comment.user}
+                    color={comment.color}
+                  />
+              }) : null}
             </div>
           </div>
         </div>
