@@ -8,7 +8,7 @@ import {
   signUpChange,
   currentUser } from '../../actions/askActions';
 
-import { newUser, signIn } from '../../helpers';
+import { changeNav } from '../../actions/navActions';
 
 import QuestionList from './components/QuestionList';
 import SignInBox from './components/SignInBox';
@@ -22,6 +22,9 @@ import Footer from './components/footer';
 })
 
 export default class Ask extends React.Component {
+  componentWillMount() {
+    this.props.dispatch(changeNav(['experience', 'home', 'tour']))
+  }
 
   render() {
     return (

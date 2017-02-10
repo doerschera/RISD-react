@@ -14,6 +14,8 @@ import {
   toggleLoading
 } from '../../actions/tourActions';
 
+import { changeNav } from '../../actions/navActions';
+
 import buildingInfo from '../../data/building-info';
 
 import MapWrapper from './components/MapWrapper.js';
@@ -48,6 +50,7 @@ export default class Tour extends React.Component {
     getImages(buildingInfo[this.props.stop].name).then((response) => {
       this.props.dispatch(setImages(response.data));
     })
+    this.props.dispatch(changeNav(['experience', 'home', 'ask']))
   }
 
   componentDidUpdate(prevProps) {

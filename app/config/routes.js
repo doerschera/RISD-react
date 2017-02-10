@@ -13,7 +13,7 @@ module.exports = (
     <Route path="/" component={Main}>
       <IndexRoute component={Home} />
       <Route path="/tour" component={Tour} />
-      <Route path="/studentlife" component={Academics} />
+      <Route path="/experience" component={Academics} />
       <Route path="/ask" component={Ask} />
       <Route path="/question/:id" component={Question} />
     </Route>
