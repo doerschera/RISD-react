@@ -24,6 +24,13 @@ export default function reducer(
       id: '',
       color: ''
     },
+    newQuestion: {
+      title: '',
+      body: '',
+      category: '',
+      user: '',
+      comments: []
+    },
     questions: false,
     currentQuestion: false,
     comment: '',
@@ -71,8 +78,17 @@ action) {
     case "COMMENT_CHANGE":
       return {...state, comment: action.payload}
 
+    case "QUESTION_CHANGE":
+      return {...state, newQuestion: {...state.newQuestion, [action.payload.field]: action.payload.value}}
+
+    case "CATEGORY_CHANGE":
+      return {...state, newQuestion: {...state.newQuestion, category: action.payload}}
+
     case "SET_COMMENT":
       return {...state, currentQuestion: {...state.currentQuestion, comments: state.currentQuestion.comments.concat(action.payload)}}
+
+    case "CLEAR_QUESTION":
+      return {...state, newQuestion: action.payload}
 
     default:
       return state;

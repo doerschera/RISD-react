@@ -243,3 +243,56 @@ export function addComment(value, user, id) {
       dispatch(commentOnChange(''));
   }
 }
+
+export function newQuestionOnChange(data) {
+  return {
+    type: "QUESTION_CHANGE",
+    payload: data
+  }
+}
+
+export function categoryOnChange(data) {
+  return {
+    type: "CATEGORY_CHANGE",
+    payload: data
+  }
+}
+
+export function addQuestion(question, userId) {
+  return (dispatch) => {
+    question.user = userId;
+    axios.post('/api/newQuestion', question)
+      .then((response) => {
+        console.log(response);
+
+        if(typeof response.data != 'object') {
+          throw response.data
+          return false;
+        }
+
+        dispatch(getQuestions());
+
+        let clearQuestion = {
+          title: '',
+          body: '',
+          category: '',
+          user: '',
+          comments: []
+        }
+        dispatch(clearNewQuestion(clearQuestion))
+      })
+      .catch((err) => {
+        dispatch(setError(err));
+        setTimeout(() => {
+          dispatch(clearError());
+        }, 5000)
+      })
+  }
+}
+
+export function clearNewQuestion(data) {
+  return {
+    type: "CLEAR_QUESTION",
+    payload: data
+  }
+}

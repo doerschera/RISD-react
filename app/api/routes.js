@@ -140,4 +140,24 @@ router.post('/api/addComment/:id', function(req, res) {
   })
 })
 
+router.post('/api/newQuestion', function(req, res) {
+  let question = new Questions(req.body);
+
+  question.save((err, result) => {
+    if(err) {
+      console.log(err);
+      let errMsg;
+
+      for(var field in err.errors) {
+        errMsg = err.errors[field].message;
+      }
+
+      res.send(errMsg);
+    } else {
+      res.send(result);
+    }
+  })
+
+})
+
 module.exports = router;
