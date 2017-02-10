@@ -9,9 +9,11 @@ import QuestionBody from './components/QuestionBody';
 import Comment from './components/Comment';
 import SignInBox from './components/SignInBox';
 import AddComment from './components/AddComment';
+import Footer from './components/Footer';
 
 @connect((store) => {
   return {
+    currentUser: store.ask.currentUser,
     currentQuestion: store.ask.currentQuestion
   }
 })
@@ -46,8 +48,9 @@ export default class Question extends React.Component {
             </div>
           </div>
         </div>
-        <AddComment />
-        <SignInBox />
+        {this.props.currentUser.status ?
+          <AddComment questionId={this.props.params.id}/> : <SignInBox />}
+        <Footer />
       </div>
     )
   }

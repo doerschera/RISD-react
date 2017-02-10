@@ -26,6 +26,7 @@ export default function reducer(
     },
     questions: false,
     currentQuestion: false,
+    comment: '',
     error: ''
   },
 action) {
@@ -66,6 +67,12 @@ action) {
 
     case "CLEAR_ERROR":
       return {...state, error: ''}
+
+    case "COMMENT_CHANGE":
+      return {...state, comment: action.payload}
+
+    case "SET_COMMENT":
+      return {...state, currentQuestion: {...state.currentQuestion, comments: state.currentQuestion.comments.concat(action.payload)}}
 
     default:
       return state;

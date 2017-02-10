@@ -124,4 +124,20 @@ router.get('/api/singleQuestion/:id', function(req, res) {
     })
 })
 
+router.post('/api/addComment/:id', function(req, res) {
+  let comment = new Comments(req.body)
+
+  comment.save((err, result) => {
+    Questions.findOneAndUpdate({_id: req.params.id}, {$push: {comments: result._id}}, {new: true})
+      .populate('comments')
+      .exec((err, result) => {
+        if(err) {
+          console.log(err);
+        }
+
+        res.send(result);
+      })
+  })
+})
+
 module.exports = router;

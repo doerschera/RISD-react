@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 
 const Comments = new Schema({
   user: String,
+  color: String,
   body: {
     type: String,
     required: [true, 'Please enter a comment!']

@@ -211,3 +211,35 @@ export function setCurretQuestion(data) {
     payload: data
   }
 }
+
+export function commentOnChange(data) {
+  return {
+    type: "COMMENT_CHANGE",
+    payload: data
+  }
+}
+
+export function setNewComment(data) {
+  return {
+    type: "SET_COMMENT",
+    payload: data
+  }
+}
+
+export function addComment(value, user, id) {
+  return (dispatch) => {
+    let data = {
+      body: value,
+      user: user.firstName + ' ' + user.lastName,
+      color: user.color
+    }
+    axios.post('/api/addComment/'+id, data)
+      .then((result) => {
+        console.log(result);
+
+        dispatch(setNewComment(result.data.comments));
+      })
+
+      dispatch(commentOnChange(''));
+  }
+}
