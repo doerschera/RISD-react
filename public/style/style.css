@@ -487,26 +487,6 @@ p {
   .sign-in .btn {
     background-color: #00ace6; }
 
-textarea.materialize-textarea {
-  border-bottom: solid 1px #00ace6;
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-weight: 300; }
-
-textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: solid 1px #00ace6;
-  box-shadow: 0 1px 0 0 #00ace6; }
-
-.add-comment {
-  margin-top: 30px;
-  padding: 15px; }
-  .add-comment h6 {
-    color: #00ace6;
-    font-size: 20px; }
-  .add-comment .btn {
-    background-color: #00ace6;
-    float: right;
-    margin-bottom: 20px; }
-
 #signUpBoxButton {
   margin-left: 30px; }
 
@@ -613,6 +593,31 @@ input[type=radio] {
   font-weight: 400;
   text-decoration: underline;
   text-transform: capitalize; }
+
+textarea.materialize-textarea {
+  border-bottom: solid 1px #00ace6;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 300; }
+
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: solid 1px #00ace6;
+  box-shadow: 0 1px 0 0 #00ace6; }
+
+.add-comment, .add-question {
+  margin-top: 30px;
+  padding: 15px; }
+  .add-comment h6, .add-question h6 {
+    color: #00ace6;
+    font-size: 20px; }
+  .add-comment .btn, .add-question .btn {
+    background-color: #00ace6;
+    float: right;
+    margin-bottom: 20px; }
+
+.add-question h6, .add-question .btn {
+  margin-top: 30px; }
+.add-question textarea {
+  margin-top: 50px; }
 
 .footer {
   height: 50px;

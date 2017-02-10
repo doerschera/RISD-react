@@ -54,30 +54,6 @@
   }
 }
 
-textarea.materialize-textarea {
-  border-bottom: solid 1px $middle-cyan;
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-weight: 300;
-}
-
-textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: solid 1px $middle-cyan;
-  box-shadow: 0 1px 0 0 $middle-cyan;
-}
-
-.add-comment {
-  margin-top: 30px;
-  padding: 15px;
-  h6 {
-    color: $middle-cyan;
-    font-size: 20px;
-  }
-  .btn {
-    background-color: $middle-cyan;
-    float: right;
-    margin-bottom: 20px;
-  }
-}
 
 #signUpBoxButton {
   margin-left: 30px;
@@ -219,4 +195,38 @@ input[type=radio] {
   font-weight: 400;
   text-decoration: underline;
   text-transform: capitalize;
+}
+
+textarea.materialize-textarea {
+  border-bottom: solid 1px $middle-cyan;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: solid 1px $middle-cyan;
+  box-shadow: 0 1px 0 0 $middle-cyan;
+}
+
+.add-comment, .add-question {
+  margin-top: 30px;
+  padding: 15px;
+  h6 {
+    color: $middle-cyan;
+    font-size: 20px;
+  }
+  .btn {
+    background-color: $middle-cyan;
+    float: right;
+    margin-bottom: 20px;
+  }
+}
+
+.add-question {
+  h6, .btn {
+    margin-top: 30px;
+  }
+  textarea {
+    margin-top: 50px;
+  }
 }
