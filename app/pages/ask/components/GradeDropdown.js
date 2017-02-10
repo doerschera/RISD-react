@@ -1,7 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+import { gradeSelectOnChange } from '../../../actions/askActions';
+
+
+@connect((store) => {
+  return {
+    userSignUp: store.ask.userSignUp
+  }
+}, (dispatch) => {
+  return {
+    gradeSelectOnChange: (event, key, payload) => {
+      dispatch(gradeSelectOnChange(payload));
+    }
+  }
+})
 export default class GradeDropdown extends React.Component {
 
   render() {
@@ -25,7 +40,7 @@ export default class GradeDropdown extends React.Component {
           onChange={this.props.gradeSelectOnChange}
         >
           <MenuItem value={'freshman'}
-            name={'hello'} primaryText="Freshman" />
+             primaryText="Freshman" />
           <MenuItem value='sophomore' primaryText="Sophomore" />
           <MenuItem value='junior' primaryText="Junior" />
           <MenuItem value='senior' primaryText="Senior" />

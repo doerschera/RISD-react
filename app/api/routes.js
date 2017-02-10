@@ -9,6 +9,8 @@ const passwordHash = require('password-hash');
 
 const Images = require('./models/images');
 const Users = require('./models/users');
+const Questions = require('./models/questions');
+const Comments = require('./models/comments');
 let helpers = require('../helpers');
 
 const router = express.Router();
@@ -52,6 +54,11 @@ router.post('/api/newUser', function(req, res) {
   data.comments =[];
   data.questions = [];
 
+  if(data.password1 != data.password2) {
+    res.send('Passwords do not match!');
+    return false;
+  }
+
   let user = new Users(data);
   user.save((err, result) => {
     if(err) {
@@ -91,6 +98,66 @@ router.post('/api/signIn', function(req, res) {
       res.send(false);
     }
   })
+})
+
+router.get('/api/allQuestions',  function(req, res) {
+
+  Questions.find({}, (err, result) => {
+    if(err) {
+      console.log(err);
+    }
+
+    console.log(result);
+    res.send(result);
+  })
+})
+
+router.get('/api/singleQuestion/:id', function(req, res) {
+  let id = req.params.id;
+  console.log(id);
+  Questions.find({_id: id})
+    .populate('comments')
+    .populate('user')
+    .exec(function(err, result) {
+      console.log(result);
+      res.send(result[0]);
+    })
+})
+
+router.post('/api/addComment/:id', function(req, res) {
+  let comment = new Comments(req.body)
+
+  comment.save((err, result) => {
+    Questions.findOneAndUpdate({_id: req.params.id}, {$push: {comments: result._id}}, {new: true})
+      .populate('comments')
+      .exec((err, result) => {
+        if(err) {
+          console.log(err);
+        }
+
+        res.send(result);
+      })
+  })
+})
+
+router.post('/api/newQuestion', function(req, res) {
+  let question = new Questions(req.body);
+
+  question.save((err, result) => {
+    if(err) {
+      console.log(err);
+      let errMsg;
+
+      for(var field in err.errors) {
+        errMsg = err.errors[field].message;
+      }
+
+      res.send(errMsg);
+    } else {
+      res.send(result);
+    }
+  })
+
 })
 
 module.exports = router;

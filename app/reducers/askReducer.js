@@ -14,7 +14,7 @@ export default function reducer(
       password2: '',
       applicantType: '',
       currentGrade: '',
-      areaOfInterest: ''
+      areaOfInterest: '',
     },
     currentUser: {
       status: false,
@@ -23,7 +23,18 @@ export default function reducer(
       email: '',
       id: '',
       color: ''
-    }
+    },
+    newQuestion: {
+      title: '',
+      body: '',
+      category: '',
+      user: '',
+      comments: []
+    },
+    questions: false,
+    currentQuestion: false,
+    comment: '',
+    error: ''
   },
 action) {
 
@@ -35,13 +46,49 @@ action) {
       return {...state, signUpForm: true, signInForm: false}
 
     case "SIGN_UP_CHANGE":
-      return {...state, userSignUp: action.payload}
+      return {...state, userSignUp: {...state.userSignUp, [action.payload.field]: action.payload.value}}
+
+    case "MAJOR_SELECT_CHANGE":
+      return {...state, userSignUp: {...state.userSignUp, areaOfInterest: action.payload}}
+
+    case "GRADE_SELECT_CHANGE":
+      return {...state, userSignUp: {...state.userSignUp, currentGrade: action.payload}}
 
     case "SIGN_IN_CHANGE":
-      return {...state, userSignIn: action.payload}
+      return {...state, userSignIn: {...state.userSignIn, [action.payload.field]: action.payload.value}}
 
     case "CURRENT_USER":
       return {...state, currentUser: action.payload}
+
+    case "CLEAR_NEW_USER":
+      return {...state, userSignUp: action.payload}
+
+    case "SET_QUESTIONS":
+      return {...state, questions: action.payload}
+
+    case "SET_CURRENT_QUESTION":
+      return {...state, currentQuestion: action.payload}
+
+    case "SET_ERROR":
+      return {...state, error: action.payload}
+
+    case "CLEAR_ERROR":
+      return {...state, error: ''}
+
+    case "COMMENT_CHANGE":
+      return {...state, comment: action.payload}
+
+    case "QUESTION_CHANGE":
+      return {...state, newQuestion: {...state.newQuestion, [action.payload.field]: action.payload.value}}
+
+    case "CATEGORY_CHANGE":
+      return {...state, newQuestion: {...state.newQuestion, category: action.payload}}
+
+    case "SET_COMMENT":
+      return {...state, currentQuestion: {...state.currentQuestion, comments: state.currentQuestion.comments.concat(action.payload)}}
+
+    case "CLEAR_QUESTION":
+      return {...state, newQuestion: action.payload}
 
     default:
       return state;

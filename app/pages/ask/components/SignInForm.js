@@ -1,6 +1,38 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { signIn, signInChange } from '../../../actions/askActions';
+
+import Error from './Error';
+
+@connect((store) => {
+  return {
+    userSignIn: store.ask.userSignIn
+  }
+}, (dispatch) => {
+  return {
+    signIn: (user) => {
+      dispatch(signIn(user));
+    },
+    signInOnChange: (event) => {
+      let newUserSignIn = {
+        field: event.target.name,
+        value: event.target.value
+      }
+
+      dispatch(signInChange(newUserSignIn));
+    }
+  }
+})
 export default class SignInForm extends React.Component {
+
+  signInOnChange(event) {
+    let newUserSignIn = update(this.props.userSignIn, {
+      [event.target.name]: {$set: event.target.value}
+    })
+
+    this.props.dispatch(signInChange(newUserSignIn));
+  }
 
   render() {
     return(
@@ -23,11 +55,11 @@ export default class SignInForm extends React.Component {
             <label for="signInPassword">Password</label>
           </div>
           <div class="col m12">
-            <p id="errorMsg"></p>
+            <Error />
             <button
               class="btn"
               id="signInButton"
-              onClick={this.props.signIn}
+              onClick={() => this.props.signIn(this.props.userSignIn)}
             >Sign In</button>
           </div>
           <div class="col m12 switch-form">

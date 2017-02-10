@@ -6,6 +6,7 @@ import Home from '../pages/home/Home.js';
 import Tour from '../pages/tour/Tour.js';
 import Academics from '../pages/studentLife/academics';
 import Ask from '../pages/ask/Ask';
+import Question from '../pages/ask/Question';
 
 module.exports = (
   <Router history={browserHistory}>
@@ -14,6 +15,7 @@ module.exports = (
       <Route path="/tour" component={Tour} />
       <Route path="/studentlife" component={Academics} />
       <Route path="/ask" component={Ask} />
+      <Route path="/question/:id" component={Question} />
     </Route>
   </Router>
 )
