@@ -113,7 +113,7 @@ export function signIn(user) {
           currentGrade: '',
           areaOfInterest: '',
         }
-        dispatch(clearNewUser(signUp));
+        dispatch(clearSignIn());
 
       })
       .catch((err) => {
@@ -122,6 +122,12 @@ export function signIn(user) {
           dispatch(clearError());
         }, 5000)
       })
+  }
+}
+
+export function clearSignIn() {
+  return {
+    type: "CLEAR_SIGNIN"
   }
 }
 
@@ -293,6 +299,13 @@ export function addQuestion(question, userId) {
 export function clearNewQuestion(data) {
   return {
     type: "CLEAR_QUESTION",
+    payload: data
+  }
+}
+
+export function signOut(data) {
+  return {
+    type: "SIGN_OUT",
     payload: data
   }
 }

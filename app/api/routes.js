@@ -106,8 +106,6 @@ router.get('/api/allQuestions',  function(req, res) {
     if(err) {
       console.log(err);
     }
-
-    console.log(result);
     res.send(result);
   })
 })

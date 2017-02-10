@@ -87,6 +87,17 @@ p {
 #nav-student-life li a {
   color: #3973ac; }
 
+.sign-out {
+  position: absolute;
+  z-index: 3;
+  top: 2px;
+  right: 25px; }
+  .sign-out p {
+    color: #4dd2ff;
+    text-decoration: underline; }
+    .sign-out p:hover {
+      cursor: pointer; }
+
 .risd-home {
   position: absolute;
   right: -60px;
