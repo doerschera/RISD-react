@@ -38,6 +38,10 @@
     color: $middle-cyan;
     margin-left: 30px;
     cursor: pointer;
+    font-size: 18px;
+  }
+  a:hover {
+    color: $middle-cyan;
   }
 }
 
@@ -119,7 +123,6 @@ input[type=radio] {
 }
 
 .circleImg {
-  border: solid 1px $middle-cyan;
   border-radius: 100%;
   height: 85px;
   width: 85px;
@@ -208,6 +211,10 @@ textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: 0 1px 0 0 $middle-cyan;
 }
 
+textarea.materialize-textarea:focus:not([readonly])+label {
+  color: $middle-cyan;
+}
+
 .add-comment, .add-question {
   margin-top: 30px;
   padding: 15px;
@@ -225,8 +232,5 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .add-question {
   h6, .btn {
     margin-top: 30px;
-  }
-  textarea {
-    margin-top: 50px;
   }
 }
