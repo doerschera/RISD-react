@@ -8,7 +8,6 @@ import Arrows from './components/Arrows.js';
 @connect((store) => {return{}})
 export default class Home extends React.Component {
   componentWillMount() {
-    this.props.dispatch(changeNav(['experience', 'tour', 'ask']))
     this.props.dispatch(changeColor('#4dd2ff'));
   }
 

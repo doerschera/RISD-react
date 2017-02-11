@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 
 @connect((store) => {
   return {
-    navList: store.nav.navList,
     navColor: store.nav.navColor
   }
 })
@@ -12,30 +11,39 @@ export default class Nav extends React.Component {
 
   render() {
     let linkColor = this.props.navColor;
-    let middleNav = '/'+this.props.navList[1];
     return(
       <ul class="nav" id={this.props.navID}>
         <li>
-          <Link
-            to={`/${this.props.navList[0]}`}
+          <IndexLink
+            to="/"
             style={{color: linkColor}}
-            id="leftLink"
-            >{this.props.navList[0]}</Link>
+            activeStyle={{backgroundColor: linkColor, color: 'white'}}
+            id="homeLink"
+            >Home</IndexLink>
         </li>
         <li>
           <Link
-            to={this.props.navList[1] === 'home' ? '/'
-            : `/${this.props.navList[1]}` }
+            to="/experience"
             style={{color: linkColor}}
-            id="centerLink"
-            >{this.props.navList[1]}</Link>
+            activeStyle={{backgroundColor: linkColor, color: 'white'}}
+            id="experienceLink"
+            >Experience</Link>
         </li>
         <li>
           <Link
-            to={`/${this.props.navList[2]}`}
+            to="/tour"
             style={{color: linkColor}}
-            id="rightLink"
-          >{this.props.navList[2]}</Link>
+            activeStyle={{backgroundColor: linkColor, color: 'white'}}
+            id="tourLink"
+          >Tour</Link>
+        </li>
+        <li>
+          <Link
+            to="/ask"
+            style={{color: linkColor}}
+            activeStyle={{backgroundColor: linkColor, color: 'white'}}
+            id="askLink"
+          >Ask</Link>
         </li>
       </ul>
     )

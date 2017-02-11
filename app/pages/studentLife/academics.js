@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { changeNav, changeColor } from '../../actions/navActions';
+import { changeColor } from '../../actions/navActions';
 
 import Row1 from './components/acad-row1.js';
 import Row2 from './components/acad-row2.js';
@@ -12,7 +12,6 @@ import Footer from './components/footer.js';
 export default class Academics extends React.Component {
 
   componentWillMount() {
-    this.props.dispatch(changeNav(['tour', 'home', 'ask']))
     this.props.dispatch(changeColor('#4396b5'))
   }
 

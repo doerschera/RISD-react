@@ -40,44 +40,44 @@ $(document).ready(function() {
   }
 
   $('#arrowRight > a').on('mouseenter', function() {
-    $('#rightLink').css({
+    $('#experienceLink').css({
       backgroundColor: "#4dd2ff",
       color: 'white'
     });
   })
   $('#arrowRight > a').on('mouseout', function() {
-    $('#rightLink').css({
+    $('#experienceLink').css({
       backgroundColor: "transparent",
       color: '#4dd2ff'
     });
   })
   $('#arrowDown > a').on('mouseenter', function() {
-    $('#centerLink').css({
+    $('#tourLink').css({
       backgroundColor: "#4dd2ff",
       color: 'white'
     });
   })
   $('#arrowDown > a').on('mouseout', function() {
-    $('#centerLink').css({
+    $('#tourLink').css({
       backgroundColor: "transparent",
       color: '#4dd2ff'
     });
   })
   $('#arrowLeft > a').on('mouseenter', function() {
-    $('#leftLink').css({
+    $('#askLink').css({
       backgroundColor: "#4dd2ff",
       color: 'white'
     });
   })
   $('#arrowLeft > a').on('mouseout', function() {
-    $('#leftLink').css({
+    $('#askLink').css({
       backgroundColor: "transparent",
       color: '#4dd2ff'
     });
   })
 
-  $('a').on('click', function() {
-    $('#rightLink, #centerLink, #leftLink').css({
+  $('.nav > a, .arrow ').on('click', function() {
+    $('#experienceLink, #tourLink, #askLink').css({
       backgroundColor: "transparent",
       color: '#4dd2ff'
     });
