@@ -63,6 +63,9 @@ action) {
     case "CLEAR_NEW_USER":
       return {...state, userSignUp: action.payload}
 
+    case "CLEAR_SIGNIN":
+      return {...state, userSignIn: {email: '', password: ''}}
+
     case "SET_QUESTIONS":
       return {...state, questions: action.payload}
 
@@ -89,6 +92,9 @@ action) {
 
     case "CLEAR_QUESTION":
       return {...state, newQuestion: action.payload}
+
+    case "SIGN_OUT":
+      return {...state, currentUser: action.payload}
 
     default:
       return state;

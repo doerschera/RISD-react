@@ -5,6 +5,7 @@
   text-align: center;
   z-index: 2;
   li a {
+    padding: 5px;
     color: $cyan;
     font-size: 1.25rem;
     margin: 0 40px;
@@ -20,5 +21,19 @@
 #nav-student-life {
   li a {
     color: $blue;
+  }
+}
+
+.sign-out {
+  position: absolute;
+  z-index: 3;
+  top: 2px;
+  right: 25px;
+  p {
+    color: $cyan;
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

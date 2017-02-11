@@ -4,7 +4,7 @@ export default class Footer extends React.Component {
 
   render() {
     return (
-      <div class="footer" id={this.props.footerID}>
+      <div class="footer" id={this.props.footerID} style={{backgroundColor: '#00ace6'}}>
         <ul>
           <li><a class="white-link" href="http://www.risd.edu/admissions/" target="_blank">Apply to RISD</a></li>
           <li><a class="white-link" href="http://www.risd.edu/Admissions/Visit_RISD/" target="_blank">Visit in Person</a></li>

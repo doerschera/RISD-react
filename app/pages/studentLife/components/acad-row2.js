@@ -41,7 +41,7 @@ export default class AcadRow2 extends React.Component {
     )
 
     return(
-      <div class="row">
+      <div class="row row-no-margin">
         <div class="col s4 majors white-box" id="majorDescription">
           <h1>Majors</h1>
           <p>

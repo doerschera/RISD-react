@@ -40,26 +40,47 @@ $(document).ready(function() {
   }
 
   $('#arrowRight > a').on('mouseenter', function() {
-    $('#rightLink').css('text-decoration', 'underline');
+    $('#rightLink').css({
+      backgroundColor: "#4dd2ff",
+      color: 'white'
+    });
   })
   $('#arrowRight > a').on('mouseout', function() {
-    $('#rightLink').css('text-decoration', 'none');
+    $('#rightLink').css({
+      backgroundColor: "transparent",
+      color: '#4dd2ff'
+    });
   })
   $('#arrowDown > a').on('mouseenter', function() {
-    $('#centerLink').css('text-decoration', 'underline');
+    $('#centerLink').css({
+      backgroundColor: "#4dd2ff",
+      color: 'white'
+    });
   })
   $('#arrowDown > a').on('mouseout', function() {
-    $('#centerLink').css('text-decoration', 'none');
+    $('#centerLink').css({
+      backgroundColor: "transparent",
+      color: '#4dd2ff'
+    });
   })
   $('#arrowLeft > a').on('mouseenter', function() {
-    $('#leftLink').css('text-decoration', 'underline');
+    $('#leftLink').css({
+      backgroundColor: "#4dd2ff",
+      color: 'white'
+    });
   })
   $('#arrowLeft > a').on('mouseout', function() {
-    $('#leftLink').css('text-decoration', 'none');
+    $('#leftLink').css({
+      backgroundColor: "transparent",
+      color: '#4dd2ff'
+    });
   })
 
   $('a').on('click', function() {
-    $('#rightLink, #centerLink, #leftLink').css('text-decoration', 'none');
+    $('#rightLink, #centerLink, #leftLink').css({
+      backgroundColor: "transparent",
+      color: '#4dd2ff'
+    });
   })
 
   $('body').on('click', '#top', function() {

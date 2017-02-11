@@ -8,7 +8,7 @@ import {
   signUpChange,
   currentUser } from '../../actions/askActions';
 
-import { newUser, signIn } from '../../helpers';
+import { changeNav, changeColor } from '../../actions/navActions';
 
 import QuestionList from './components/QuestionList';
 import SignInBox from './components/SignInBox';
@@ -22,6 +22,10 @@ import Footer from './components/footer';
 })
 
 export default class Ask extends React.Component {
+  componentWillMount() {
+    this.props.dispatch(changeNav(['experience', 'home', 'tour']))
+    this.props.dispatch(changeColor('#00ace6'));
+  }
 
   render() {
     return (

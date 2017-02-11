@@ -13,7 +13,7 @@ export default class Arrows extends React.Component {
       {
         src: '/style/images/arrow-left.png',
         id: 'arrowLeft',
-        route: 'studentlife',
+        route: 'experience',
       },
       {
         src: '/style/images/down-arrow.png',
