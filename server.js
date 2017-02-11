@@ -27,7 +27,7 @@ db.once('open', function() {
   console.log('Mongoose connection successful');
 })
 
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile('public/index.html', {root: __dirname});
 });
 
