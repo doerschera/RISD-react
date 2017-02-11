@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { getCurrentQuestion } from '../../actions/askActions';
 
+import { changeNav, changeColor } from '../../actions/navActions';
+
 import BackArrow from './components/BackArrow';
 import QuestionHeading from './components/QuestionHeading';
 import QuestionBody from './components/QuestionBody';
@@ -20,6 +22,8 @@ import Footer from './components/Footer';
 export default class Question extends React.Component {
   componentWillMount() {
     this.props.dispatch(getCurrentQuestion(this.props.params.id))
+    this.props.dispatch(changeNav(['experience', 'home', 'tour']))
+    this.props.dispatch(changeColor('#00ace6'));
   }
 
   render() {

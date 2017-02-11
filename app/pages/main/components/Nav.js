@@ -19,6 +19,7 @@ export default class Nav extends React.Component {
           <Link
             to={`/${this.props.navList[0]}`}
             style={{color: linkColor}}
+            id="leftLink"
             >{this.props.navList[0]}</Link>
         </li>
         <li>
@@ -26,12 +27,14 @@ export default class Nav extends React.Component {
             to={this.props.navList[1] === 'home' ? '/'
             : `/${this.props.navList[1]}` }
             style={{color: linkColor}}
+            id="centerLink"
             >{this.props.navList[1]}</Link>
         </li>
         <li>
           <Link
             to={`/${this.props.navList[2]}`}
             style={{color: linkColor}}
+            id="rightLink"
           >{this.props.navList[2]}</Link>
         </li>
       </ul>
