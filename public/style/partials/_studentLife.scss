@@ -20,6 +20,14 @@
   margin-bottom: 0;
 }
 
+.row-no-margin {
+  margin: 0;
+}
+
+#academicsContainer {
+  @include dashed-border(bottom, $teal);
+}
+
 #foundations, #liberalArts, .majors {
   padding: 15px;
     h1 {

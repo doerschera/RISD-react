@@ -4,3 +4,10 @@ export function changeNav(newNav) {
     payload: newNav
   }
 }
+
+export function changeColor(color) {
+  return {
+    type: "CHANGE_COLOR",
+    payload: color
+  }
+}

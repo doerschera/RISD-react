@@ -4,24 +4,35 @@ import { Link } from 'react-router';
 
 @connect((store) => {
   return {
-    navList: store.nav.navList
+    navList: store.nav.navList,
+    navColor: store.nav.navColor
   }
 })
 export default class Nav extends React.Component {
 
   render() {
+    let linkColor = this.props.navColor;
     let middleNav = '/'+this.props.navList[1];
     return(
       <ul class="nav" id={this.props.navID}>
         <li>
-          <Link to={`/${this.props.navList[0]}`}>{this.props.navList[0]}</Link>
+          <Link
+            to={`/${this.props.navList[0]}`}
+            style={{color: linkColor}}
+            >{this.props.navList[0]}</Link>
         </li>
         <li>
-          <Link to={this.props.navList[1] === 'home' ? '/'
-            : `/${this.props.navList[1]}` }>{this.props.navList[1]}</Link>
+          <Link
+            to={this.props.navList[1] === 'home' ? '/'
+            : `/${this.props.navList[1]}` }
+            style={{color: linkColor}}
+            >{this.props.navList[1]}</Link>
         </li>
         <li>
-          <Link to={`/${this.props.navList[2]}`}>{this.props.navList[2]}</Link>
+          <Link
+            to={`/${this.props.navList[2]}`}
+            style={{color: linkColor}}
+          >{this.props.navList[2]}</Link>
         </li>
       </ul>
     )

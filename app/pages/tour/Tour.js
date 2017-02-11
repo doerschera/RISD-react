@@ -14,7 +14,7 @@ import {
   toggleLoading
 } from '../../actions/tourActions';
 
-import { changeNav } from '../../actions/navActions';
+import { changeNav, changeColor } from '../../actions/navActions';
 
 import buildingInfo from '../../data/building-info';
 
@@ -51,6 +51,7 @@ export default class Tour extends React.Component {
       this.props.dispatch(setImages(response.data));
     })
     this.props.dispatch(changeNav(['experience', 'home', 'ask']))
+    this.props.dispatch(changeColor('#4dd2ff'));
   }
 
   componentDidUpdate(prevProps) {

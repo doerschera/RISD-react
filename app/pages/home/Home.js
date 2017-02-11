@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { changeNav } from '../../actions/navActions';
+import { changeNav, changeColor } from '../../actions/navActions';
 
 import Arrows from './components/Arrows.js';
 
@@ -9,6 +9,7 @@ import Arrows from './components/Arrows.js';
 export default class Home extends React.Component {
   componentWillMount() {
     this.props.dispatch(changeNav(['experience', 'tour', 'ask']))
+    this.props.dispatch(changeColor('#4dd2ff'));
   }
 
 
