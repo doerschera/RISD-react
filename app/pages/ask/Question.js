@@ -22,7 +22,6 @@ import Footer from './components/Footer';
 export default class Question extends React.Component {
   componentWillMount() {
     this.props.dispatch(getCurrentQuestion(this.props.params.id))
-    this.props.dispatch(changeNav(['experience', 'home', 'tour']))
     this.props.dispatch(changeColor('#00ace6'));
   }
 

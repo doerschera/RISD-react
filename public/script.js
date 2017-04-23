@@ -40,13 +40,13 @@ $(document).ready(function() {
   }
 
   $('#arrowRight > a').on('mouseenter', function() {
-    $('#experienceLink').css({
+    $('#askLink').css({
       backgroundColor: "#4dd2ff",
       color: 'white'
     });
   })
   $('#arrowRight > a').on('mouseout', function() {
-    $('#experienceLink').css({
+    $('#askLink').css({
       backgroundColor: "transparent",
       color: '#4dd2ff'
     });
@@ -64,13 +64,13 @@ $(document).ready(function() {
     });
   })
   $('#arrowLeft > a').on('mouseenter', function() {
-    $('#askLink').css({
+    $('#experienceLink').css({
       backgroundColor: "#4dd2ff",
       color: 'white'
     });
   })
   $('#arrowLeft > a').on('mouseout', function() {
-    $('#askLink').css({
+    $('#experienceLink').css({
       backgroundColor: "transparent",
       color: '#4dd2ff'
     });

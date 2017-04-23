@@ -1,5 +1,4 @@
 export default function reducer(state={
-  navList: ['Experience', 'Tour', 'Ask'],
   navColor: '#4dd2ff'
 }, action) {
   switch(action.type) {
